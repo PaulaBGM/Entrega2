@@ -13,6 +13,7 @@ namespace Input
         private PlayerInput _playerInput;
 
         private Action _onSelect;
+        private Action _onInteract;
 
         private void Awake()
         {
@@ -30,6 +31,12 @@ namespace Input
         private void OnEnable()
         {
             _playerInput.actions["Select"].started += OnSelectionStarted;
+            _playerInput.actions["Interact"].started += OnInteractStarted;
+        }
+
+        private void OnInteractStarted(InputAction.CallbackContext obj)
+        {
+            _onInteract.Invoke();
         }
 
         private void OnSelectionStarted(InputAction.CallbackContext obj)
@@ -40,12 +47,16 @@ namespace Input
         private void OnDisable()
         {
             _playerInput.actions["Select"].started -= OnSelectionStarted;
+            _playerInput.actions["Interact"].started -= OnInteractStarted;
         }
 
         #region Subscriptions
 
         public void SubscribeToSelect(Action actionToSubscribe) => _onSelect += actionToSubscribe;
         public void UnsubscribeToSelect(Action actionToUnsubscribe) => _onSelect -= actionToUnsubscribe;
+        
+        public void SubscribeToInteract(Action actionToSubscribe) => _onInteract += actionToSubscribe;
+        public void UnsubscribeToInteract(Action actionToUnsubscribe) => _onInteract -= actionToUnsubscribe;
     
         #endregion
     }
