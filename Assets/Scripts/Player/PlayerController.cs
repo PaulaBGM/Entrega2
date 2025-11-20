@@ -1,6 +1,6 @@
-using System;
+using System.Collections;
 using Input;
-using Interactables;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +8,11 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        private GameObject _interactableSelected;
+        [SerializeField] private Vector3 interactableScaleWhenSelected = new Vector3(1.5f, 1.5f, 1.5f);
+        
+        private ISelectable _selectableSelected;
+        
+        private bool _canSelect = true;
         
         private void OnEnable()
         {
@@ -32,55 +36,58 @@ namespace Player
 
         private void OnSelect()
         {
-            if (_interactableSelected is not null)
+            if (!_canSelect)
+                return;
+            
+            StartCoroutine(SelectionCooldown(0.5f));
+            
+            if (_selectableSelected is not null)
             {
-                _interactableSelected = null;
+                _selectableSelected.Deselect();
+                _selectableSelected = null;
                 return;
             }
             
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             Collider2D col = Physics2D.OverlapPoint(mousePos);
             
-            if (col != null && col.TryGetComponent<IInteractable>(out IInteractable interactable))
+            if (col != null && col.TryGetComponent(out ISelectable selectable))
             {
-                _interactableSelected = col.gameObject;
-                interactable.Select();
+                _selectableSelected = selectable;
+                selectable.Select();
             }
         }
         
         
         private void OnInteract()
         {
-            if (_interactableSelected is null)
+            if (_selectableSelected == null)
                 return;
-
-            if (_interactableSelected.TryGetComponent<IInteractable>(out IInteractable interactable))
+            
+            var mb = _selectableSelected as MonoBehaviour;
+            if (mb is not null && mb.TryGetComponent(out IInteractable interactable))
             {
                 interactable.Interact();
             }
+            
+            if (mb is null)
+            {
+                Debug.LogError(_selectableSelected + " is not a game object.");
+            }
         }
 
-        private void Update()
-        {
-            if (_interactableSelected is null)
-                return;
 
-            MoveInteractableSmooth();
-        }
-        
-        private void MoveInteractableSmooth()
+        private IEnumerator SelectionCooldown(float cooldownTime)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            
-            float k = 10f;
-            float t = 1 - Mathf.Exp(-k * Time.deltaTime);
-            
-            _interactableSelected.transform.position =
-                Vector2.Lerp(_interactableSelected.transform.position, mousePos, t);
+            _canSelect = false;
+            yield return new WaitForSeconds(cooldownTime);
+            _canSelect = true;
         }
 
         private void OnDisable()
         {
+            StopAllCoroutines();
+            
             InputSystemHandler.Instance.UnsubscribeToSelect(OnSelect);
             InputSystemHandler.Instance.UnsubscribeToInteract(OnInteract);
         }

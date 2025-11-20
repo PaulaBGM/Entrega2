@@ -1,10 +1,7 @@
-using UnityEngine;
-
-namespace Interactables
+namespace Interfaces
 {
     public interface IInteractable
     {
-        void Select();
         void Interact();
     }
 }

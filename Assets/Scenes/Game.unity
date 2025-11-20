@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 659794256}
   - component: {fileID: 659794255}
   - component: {fileID: 659794257}
+  - component: {fileID: 659794259}
   - component: {fileID: 659794258}
   m_Layer: 0
   m_Name: ActionsTileMarker_0
@@ -585,7 +586,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 659794254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91987b497f148ec4980cdfa09326a78f, type: 3}
+  m_Script: {fileID: 11500000, guid: a704a21a54580ae4abeaa7a125ad18d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveConstant: 10
+  _scaleConstant: 10
+--- !u!114 &659794259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659794254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1ee6c77d1ef0e4fa8c72f47072c835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &737309286
@@ -771,6 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2694e0d244239294b9ceb4e07ca88ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactableScaleWhenSelected: {x: 1.5, y: 1.5, z: 1.5}
 --- !u!4 &2048910447
 Transform:
   m_ObjectHideFlags: 0
