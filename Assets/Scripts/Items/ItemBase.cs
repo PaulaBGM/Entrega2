@@ -23,13 +23,13 @@ namespace Items
             _smoothTransform.ScaleSmooth(new Vector3(1.5f, 1.5f, 1.5f));
         }
 
-        public void Uncollect()
+        public virtual void Uncollect()
         {
             _isCollected = false;
             _smoothTransform.ScaleSmooth(Vector3.one);
         }
 
-        public void Interact()
+        public virtual void Interact()
         {
             Debug.Log("Interacting TestItem");
         }
