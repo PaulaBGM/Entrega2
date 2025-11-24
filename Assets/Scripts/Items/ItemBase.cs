@@ -1,6 +1,7 @@
 using System.Collections;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Items
 {
@@ -48,7 +49,8 @@ namespace Items
         {
             while (_isCollected)
             {
-                _smoothTransform.MoveSmooth();
+                _smoothTransform.MoveSmooth(
+                    Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
                 yield return null;
             }
         }

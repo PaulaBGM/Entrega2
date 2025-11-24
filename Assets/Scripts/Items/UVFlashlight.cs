@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Items
 {
-    public class UVFlashlight : ItemBase
+    public sealed class UVFlashlight : ItemBase
     {
         [SerializeField] private GameObject uvSpriteMask;
 

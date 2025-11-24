@@ -8,8 +8,6 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private Vector3 interactableScaleWhenSelected = new Vector3(1.5f, 1.5f, 1.5f);
-        
         private ISelectable _selectableSelected;
         
         private bool _canSelect = true;

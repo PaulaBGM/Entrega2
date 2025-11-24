@@ -8,10 +8,8 @@ public class SmoothTransform : MonoBehaviour
     [SerializeField] private float _moveConstant = 10f;
     [SerializeField] private float _scaleConstant = 10f;
 
-    public void MoveSmooth()
+    public void MoveSmooth(Vector2 mousePos)
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        
         float t = 1 - Mathf.Exp(-_moveConstant * Time.deltaTime);
             
         var objectivePosition = new Vector3(mousePos.x, mousePos.y, -2f);
