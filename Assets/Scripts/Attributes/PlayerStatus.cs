@@ -17,7 +17,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.SubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
+        GameManager.Instance?.SubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
     }
 
     private void Start()
@@ -45,6 +45,6 @@ public class PlayerStatus : MonoBehaviour
     
     private void OnDisable()
     {
-        GameManager.Instance.UnsubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
+        GameManager.Instance?.UnsubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
     }
 }

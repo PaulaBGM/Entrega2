@@ -13,7 +13,7 @@ namespace ArtWorks
         
         private void OnEnable()
         {
-            GameManager.Instance.SubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
+            GameManager.Instance?.SubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
         }
         
         private void Start()
@@ -41,12 +41,12 @@ namespace ArtWorks
             
             _artWorkSpawned.StartSpawnBehavior(objectivePoint.position);
             
-            GameManager.Instance.SetCurrentArtWork(_artWorkSpawned);
+            GameManager.Instance?.SetCurrentArtWork(_artWorkSpawned);
         }
         
         private void OnDisable()
         {
-            GameManager.Instance.UnsubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
+            GameManager.Instance?.UnsubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
         }
     }
 }
