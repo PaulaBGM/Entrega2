@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 61a7fae5fcb300640a85471baee4a701
+guid: bb3a53fa5299e41438ded9fb9202605e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8339373382105099985
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (2)_0"
+      213: -2362142496030901803
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (3)_0"
   - first:
-      213: -2532366981717590794
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (2)_1"
+      213: 7914556894745374124
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (3)_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -142,29 +142,29 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (2)_0"
+      name: zoom
       rect:
         serializedVersion: 2
-        x: 70
-        y: 18
+        x: 73
+        y: 28
         width: 113
-        height: 225
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f211746c718944c80800000000000000
-      internalID: -8339373382105099985
+      spriteID: 5d9393f3aebf73fd0800000000000000
+      internalID: -2362142496030901803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (2)_1"
+      name: flashlight
       rect:
         serializedVersion: 2
         x: 332
@@ -172,15 +172,15 @@ TextureImporter:
         width: 111
         height: 226
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fc7bcda5a93bdcd0800000000000000
-      internalID: -2532366981717590794
+      spriteID: cadaae9009726dd60800000000000000
+      internalID: 7914556894745374124
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5765a7ac32bc2524a83e3269dc70c5f5
     internalID: 0
     vertices: []
     indices: 
@@ -199,8 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Ilustracio\u0301n_sin_ti\u0301tulo (2)_0": -8339373382105099985
-      "Ilustracio\u0301n_sin_ti\u0301tulo (2)_1": -2532366981717590794
+      flashlight: 7914556894745374124
+      zoom: -2362142496030901803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
