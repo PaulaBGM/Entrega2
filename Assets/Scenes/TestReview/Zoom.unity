@@ -569,7 +569,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1266681250
@@ -634,22 +634,6 @@ PrefabInstance:
     - target: {fileID: 893781388926344539, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030808614464326113, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 1030808614464326113, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
-      propertyPath: m_IsCustomRangeActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886546562728832412, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886546562728832412, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3247651178060156237, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
       propertyPath: m_Name
