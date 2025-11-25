@@ -39,8 +39,9 @@ namespace Managers
 
         public void SubscribeToOnArtworkEvaluated(Action<ArtWork ,bool> actionToSubscribe) =>
             _onArtworkEvaluated += actionToSubscribe;
-        public void UnsubscribeToOnArtworkEvaluated(Action<ArtWork, bool> actionToSubscribe) =>
-            _onArtworkEvaluated += actionToSubscribe;
+        public void UnsubscribeToOnArtworkEvaluated(Action<ArtWork, bool> actionToUnsubscribe) =>
+            _onArtworkEvaluated -= actionToUnsubscribe;
+
 
         #endregion
     }
