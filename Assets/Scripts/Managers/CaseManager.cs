@@ -1,4 +1,3 @@
-using ArtWorks;
 using Managers;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class CaseManager : MonoBehaviour
     public static CaseManager Instance;
 
     public CaseDayData dayData;
+
     private int currentCaseIndex = 0;
 
     private void Awake()
@@ -30,46 +30,40 @@ public class CaseManager : MonoBehaviour
         return dayData.cases[currentCaseIndex];
     }
 
-    private void OnArtworkEvaluated(ArtWork artwork, bool hasPassed)
+    private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
     {
-        CaseData currentCase = GetCurrentCase();
+        CaseData caseData = GetCurrentCase();
 
-        bool correct = (currentCase.isGenuine == hasPassed);
+        bool isCorrect = (caseData.isGenuine == hasPassed);
 
-        if (correct)
+        if (isCorrect)
         {
-            //recompensa
-            Debug.Log($"Caso {currentCase.caseID} correcto. +{currentCase.rewardIfCorrect}");
-            
+            Debug.Log($"Caso {caseData.caseID} correcto. Recompensa: +{caseData.rewardIfCorrect}");
         }
         else
         {
-            Debug.Log($"Caso {currentCase.caseID} incorrecto. -{currentCase.penaltyIfWrong}");
+            Debug.Log($"Caso {caseData.caseID} incorrecto. Penalización: -{caseData.penaltyIfWrong}");
         }
 
         GoToNextCase();
     }
 
+    public bool HasMoreCases()
+    {
+        return currentCaseIndex < dayData.cases.Count - 1;
+    }
+
     public void GoToNextCase()
     {
-        currentCaseIndex++;
-
-        if (currentCaseIndex >= dayData.cases.Count)
+        if (!HasMoreCases())
         {
-            Debug.Log("Dia completado. No hay mas casos.");
-            // Evento de fin de dia/resumen
+            Debug.Log("Día completado. No hay más casos.");
+            //Sacar resumen del dia
+
             return;
         }
 
-        Debug.Log($"Siguiente caso: {dayData.cases[currentCaseIndex].caseID}");
-
-        // Cargar la carta del siguiente caso
-        var nextCase = GetCurrentCase();
-        LetterUIController.Instance.ShowLetter(nextCase.description);
-
-        LetterUIController.Instance.OnLetterClosed = () =>
-        {
-            //CargarObra
-        };
+        currentCaseIndex++;
+        Debug.Log($"Avanzando al siguiente caso: {dayData.cases[currentCaseIndex].caseID}");
     }
 }

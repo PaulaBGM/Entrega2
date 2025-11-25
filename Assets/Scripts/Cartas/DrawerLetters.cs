@@ -3,15 +3,14 @@ using Interfaces;
 
 public class DrawerLetters : MonoBehaviour, IInteractable
 {
-    [TextArea] public string testLetterContent;
-
     public void Interact()
     {
-        LetterUIController.Instance.ShowLetter(testLetterContent);
+        CaseData caseData = CaseManager.Instance.GetCurrentCase();
+        Debug.Log($"Carta abierta del caso: {caseData.caseID}");
 
-        LetterUIController.Instance.OnLetterClosed = () =>
-        {
-            //CargarObra
-        };
+        //Mostrar Carta
+        //Cerrar carta
+        //Cargar obra
+
     }
 }
