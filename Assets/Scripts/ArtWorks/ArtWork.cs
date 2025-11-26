@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Interfaces;
 using ScriptableObjects.GameAttributes;
@@ -9,19 +10,21 @@ namespace ArtWorks
     [RequireComponent(typeof(SmoothTransform))]
     public class ArtWork : MonoBehaviour, ICollectable, ISelectable
     {
-        [field: SerializeField] public GameAttributesDataSO AcceptAttributes { get; private set;}
-        [field: SerializeField] public GameAttributesDataSO RejectAttributes { get; private set;}
+        [field: SerializeField] public GameAttributesDataSo AcceptAttributes { get; private set;}
+        [field: SerializeField] public GameAttributesDataSo RejectAttributes { get; private set;}
         
         private bool _isCollected;
         private bool _isSelectable = true;
     
         private SmoothTransform _smoothTransform;
+        private Collider2D _collider;
 
         private void Awake()
         {
             _smoothTransform = GetComponent<SmoothTransform>();
+            _collider = GetComponent<Collider2D>();
         }
-    
+
         public void Collect()
         {
             _isCollected = true;
@@ -34,6 +37,8 @@ namespace ArtWorks
             _isCollected = false;
             _smoothTransform.ScaleSmooth(Vector3.one);
         }
+        
+        public Collider2D GetCollider() => _collider;
 
         public void Select()
         { 

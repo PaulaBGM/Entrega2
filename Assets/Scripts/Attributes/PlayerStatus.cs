@@ -32,7 +32,7 @@ public class PlayerStatus : MonoBehaviour
         UpdateStatus(hasPassed ? artWork.AcceptAttributes : artWork.RejectAttributes);
     }
 
-    public void UpdateStatus(GameAttributesDataSO gameAttributesData)
+    public void UpdateStatus(GameAttributesDataSo gameAttributesData)
     {
         _currentReputation = Math.Clamp(_currentReputation + gameAttributesData.Reputation, 0, 100);
         _currentEthic = Math.Clamp(_currentEthic + gameAttributesData.Ethic, 0, 100);
