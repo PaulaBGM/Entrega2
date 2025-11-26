@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810521082849986464}
   - component: {fileID: 6118562342952444049}
+  - component: {fileID: 3621641673186925696}
   m_Layer: 0
   m_Name: SoundFXManager
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundFXObject: {fileID: 2839023331710347817, guid: 6b06c728a0b265641a16f50208fe2a0f, type: 3}
+--- !u!114 &3621641673186925696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699203315594663883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad86f329ec8a8094997a8deb993f1755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 5cf9e85ac93593e4a9d26fc7fe91f1e7, type: 2}
