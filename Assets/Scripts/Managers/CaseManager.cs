@@ -36,13 +36,14 @@ public class CaseManager : MonoBehaviour
 
         bool isCorrect = (caseData.isGenuine == hasPassed);
 
+        // Solo feedback por consola. PlayerStatus ya aplica consecuencias.
         if (isCorrect)
         {
-            Debug.Log($"Caso {caseData.caseID} correcto. Recompensa: +{caseData.rewardIfCorrect}");
+            Debug.Log($"Caso {caseData.caseID} decidido correctamente.");
         }
         else
         {
-            Debug.Log($"Caso {caseData.caseID} incorrecto. Penalización: -{caseData.penaltyIfWrong}");
+            Debug.Log($"Caso {caseData.caseID} decidido incorrectamente.");
         }
 
         GoToNextCase();
@@ -57,13 +58,11 @@ public class CaseManager : MonoBehaviour
     {
         if (!HasMoreCases())
         {
-            Debug.Log("Día completado. No hay más casos.");
-            //Sacar resumen del dia
-
+            Debug.Log("Día completado. No hay más casos disponibles.");
             return;
         }
 
         currentCaseIndex++;
-        Debug.Log($"Avanzando al siguiente caso: {dayData.cases[currentCaseIndex].caseID}");
+        Debug.Log($"Cambiando al siguiente caso: {dayData.cases[currentCaseIndex].caseID}");
     }
 }
