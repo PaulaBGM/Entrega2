@@ -7,25 +7,32 @@ using UnityEngine.InputSystem;
 namespace ArtWorks
 {
     [RequireComponent(typeof(SmoothTransform))]
-    public class ArtWork : MonoBehaviour, ICollectable, ISelectable
+    public class ArtWork : MonoBehaviour, ISelectable
     {
-        [field: SerializeField] public GameAttributesDataSO AcceptAttributes { get; private set; }
-        [field: SerializeField] public GameAttributesDataSO RejectAttributes { get; private set; }
+        [Header("Atributos del Sistema de Decisión")]
+        [field: SerializeField] public GameAttributesDataSo AcceptAttributes { get; private set; }
+        [field: SerializeField] public GameAttributesDataSo RejectAttributes { get; private set; }
 
+        [Header("Referencias Visuales")]
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        // Asigna esto en el prefab del ArtWork si usas sprites
+        // Si tu obra es 3D, puedes dejarlo vacío o sustituir por MeshRenderer
+
+        // Datos del Case
         public CaseData CaseData { get; private set; }
-
         public bool IsGenuine { get; private set; }
 
         private bool _isCollected;
         private bool _isSelectable = true;
 
         private SmoothTransform _smoothTransform;
-        private SpriteRenderer _spriteRenderer; // opcional si usas sprites
 
         private void Awake()
         {
             _smoothTransform = GetComponent<SmoothTransform>();
-            _spriteRenderer = GetComponent<SpriteRenderer>(); // solo si existe
+
+            if (spriteRenderer == null)
+                spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
 
         public void SetupFromCase(CaseData data)
@@ -33,8 +40,10 @@ namespace ArtWorks
             CaseData = data;
             IsGenuine = data.isGenuine;
 
-            if (_spriteRenderer != null && data.artworkSprite != null)
-                _spriteRenderer.sprite = data.artworkSprite;
+            if (spriteRenderer != null && data.artworkSprite != null)
+            {
+                spriteRenderer.sprite = data.artworkSprite;
+            }
         }
 
         public void Collect()
@@ -85,8 +94,11 @@ namespace ArtWorks
         {
             while (_isCollected)
             {
-                _smoothTransform.MoveSmooth(
-                    Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
+                Vector3 mouseWorldPos =
+                    Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                mouseWorldPos.z = 0;
+
+                _smoothTransform.MoveSmooth(mouseWorldPos);
                 yield return null;
             }
         }
