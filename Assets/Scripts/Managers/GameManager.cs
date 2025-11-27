@@ -1,5 +1,6 @@
 using System;
 using ArtWorks;
+using Attributes;
 using UnityEngine;
 
 namespace Managers
@@ -12,6 +13,8 @@ namespace Managers
         private Action<ArtWork, bool> _onArtworkEvaluated;
 
         private ArtWork _currentArtwork;
+        
+        [field: SerializeField] public PlayerStatus PlayerStatus {get; private set;}
 
         private void Awake()
         {

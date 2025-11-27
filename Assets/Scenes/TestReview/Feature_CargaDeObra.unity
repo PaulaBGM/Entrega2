@@ -228,18 +228,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8384086344152549607, guid: 7f56178fb6db793479db938cb4574634, type: 3}
-      propertyPath: startEthic
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384086344152549607, guid: 7f56178fb6db793479db938cb4574634, type: 3}
-      propertyPath: startFunds
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384086344152549607, guid: 7f56178fb6db793479db938cb4574634, type: 3}
-      propertyPath: startReputation
-      value: 80
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -888,9 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8e638e8dfdbf44088887bc46884f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artworkPrefabs:
-  - {fileID: 2719531461719534455, guid: 602ca11bc259b2441960aa7005cf2594, type: 3}
-  - {fileID: 2719531461719534455, guid: a785b30483845c540b851b9437a8270a, type: 3}
+  artworkPrefab: {fileID: 0}
   spawnPoint: {fileID: 428945123}
   objectivePoint: {fileID: 1496512401}
 --- !u!1 &1387851271
