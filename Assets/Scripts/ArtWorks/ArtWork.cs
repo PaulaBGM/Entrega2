@@ -9,19 +9,34 @@ namespace ArtWorks
     [RequireComponent(typeof(SmoothTransform))]
     public class ArtWork : MonoBehaviour, ICollectable, ISelectable
     {
-        [field: SerializeField] public GameAttributesDataSO AcceptAttributes { get; private set;}
-        [field: SerializeField] public GameAttributesDataSO RejectAttributes { get; private set;}
-        
+        [field: SerializeField] public GameAttributesDataSO AcceptAttributes { get; private set; }
+        [field: SerializeField] public GameAttributesDataSO RejectAttributes { get; private set; }
+
+        public CaseData CaseData { get; private set; }
+
+        public bool IsGenuine { get; private set; }
+
         private bool _isCollected;
         private bool _isSelectable = true;
-    
+
         private SmoothTransform _smoothTransform;
+        private SpriteRenderer _spriteRenderer; // opcional si usas sprites
 
         private void Awake()
         {
             _smoothTransform = GetComponent<SmoothTransform>();
+            _spriteRenderer = GetComponent<SpriteRenderer>(); // solo si existe
         }
-    
+
+        public void SetupFromCase(CaseData data)
+        {
+            CaseData = data;
+            IsGenuine = data.isGenuine;
+
+            if (_spriteRenderer != null && data.artworkSprite != null)
+                _spriteRenderer.sprite = data.artworkSprite;
+        }
+
         public void Collect()
         {
             _isCollected = true;
@@ -36,10 +51,10 @@ namespace ArtWorks
         }
 
         public void Select()
-        { 
+        {
             if (!_isSelectable)
                 return;
-            
+
             Collect();
         }
 
@@ -47,7 +62,7 @@ namespace ArtWorks
         {
             Uncollect();
         }
-        
+
         public void StartSpawnBehavior(Vector2 movePosition)
         {
             StartCoroutine(SpawnBehaviorRoutine(movePosition));
@@ -56,7 +71,7 @@ namespace ArtWorks
         private IEnumerator SpawnBehaviorRoutine(Vector2 movePosition)
         {
             _isSelectable = false;
-            
+
             while ((movePosition - (Vector2)transform.position).sqrMagnitude > 0.01f)
             {
                 _smoothTransform.MoveSmooth(movePosition);
@@ -65,7 +80,6 @@ namespace ArtWorks
 
             _isSelectable = true;
         }
-
 
         private IEnumerator CollectedTick()
         {
