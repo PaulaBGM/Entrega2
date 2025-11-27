@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Interfaces;
 using ScriptableObjects.GameAttributes;
@@ -7,29 +8,29 @@ using UnityEngine.InputSystem;
 namespace ArtWorks
 {
     [RequireComponent(typeof(SmoothTransform))]
-    public class ArtWork : MonoBehaviour, ISelectable
+    public class ArtWork : MonoBehaviour, ICollectable, ISelectable
     {
-        [Header("Atributos del Sistema de Decisión")]
+        [Header("Atributos del Sistema de Decision")]
         [field: SerializeField] public GameAttributesDataSo AcceptAttributes { get; private set; }
         [field: SerializeField] public GameAttributesDataSo RejectAttributes { get; private set; }
-
-        [Header("Referencias Visuales")]
-        [SerializeField] private SpriteRenderer spriteRenderer;
-        // Asigna esto en el prefab del ArtWork si usas sprites
-        // Si tu obra es 3D, puedes dejarlo vacío o sustituir por MeshRenderer
-
-        // Datos del Case
-        public CaseData CaseData { get; private set; }
-        public bool IsGenuine { get; private set; }
 
         private bool _isCollected;
         private bool _isSelectable = true;
 
         private SmoothTransform _smoothTransform;
+        private Collider2D _collider;
+
+        [Header("Referencias Visuales")]
+        [SerializeField] private SpriteRenderer spriteRenderer;
+
+        public CaseData CaseData { get; private set; }
+        public bool IsGenuine { get; private set; }
+
 
         private void Awake()
         {
             _smoothTransform = GetComponent<SmoothTransform>();
+            _collider = GetComponent<Collider2D>();
 
             if (spriteRenderer == null)
                 spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -58,6 +59,7 @@ namespace ArtWorks
             _isCollected = false;
             _smoothTransform.ScaleSmooth(Vector3.one);
         }
+        public Collider2D GetCollider() => _collider;
 
         public void Select()
         {
