@@ -5,70 +5,38 @@ namespace ArtWorks
 {
     public class ArtworkSpawner : MonoBehaviour
     {
-        [Header("Prefab ÚNICO de Artwork")]
-        [SerializeField] private GameObject artworkPrefab;
+        public static ArtworkSpawner Instance { get; private set; }
 
-        [Header("Spawn Settings")]
+        [SerializeField] private GameObject artworkPrefab;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private Transform objectivePoint;
 
         private ArtWork _artWorkSpawned;
 
-        private void OnEnable()
+        private void Awake()
         {
-            GameManager.Instance?.SubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
+            Instance = this;
         }
 
-        private void Start()
-        {
-            SpawnArtworkForCurrentCase();
-        }
-
-        private void OnDisable()
-        {
-            GameManager.Instance?.UnsubscribeToOnArtworkEvaluated(HandleOnArtworkEvaluated);
-        }
-
-        private void HandleOnArtworkEvaluated(ArtWork _, bool __)
-        {
-            SpawnArtworkForCurrentCase();
-        }
-
-        private void SpawnArtworkForCurrentCase()
+        public void SpawnArtworkForCurrentCase()
         {
             if (_artWorkSpawned != null)
-            {
                 Destroy(_artWorkSpawned.gameObject);
-                _artWorkSpawned = null;
-            }
 
             CaseData caseData = CaseManager.Instance.GetCurrentCase();
             if (caseData == null)
             {
-                Debug.Log("No hay más casos. Día completado.");
+                Debug.Log("No hay más casos.");
                 return;
             }
 
-            GameObject obj = Instantiate(
-                artworkPrefab,
-                spawnPoint.position,
-                Quaternion.identity
-            );
+            GameObject obj = Instantiate(artworkPrefab, spawnPoint.position, Quaternion.identity);
 
             _artWorkSpawned = obj.GetComponent<ArtWork>();
-            if (_artWorkSpawned == null)
-            {
-                Debug.LogError("El prefab Artwork no contiene el componente ArtWork.");
-                return;
-            }
-
             _artWorkSpawned.SetupFromCase(caseData);
-
             _artWorkSpawned.StartSpawnBehavior(objectivePoint.position);
 
-            GameManager.Instance?.SetCurrentArtWork(_artWorkSpawned);
-
-            Debug.Log($"Spawned artwork for case: {caseData.caseID}");
+            GameManager.Instance.SetCurrentArtWork(_artWorkSpawned);
         }
     }
 }
