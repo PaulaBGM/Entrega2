@@ -8,16 +8,13 @@ public class DrawerLetters : MonoBehaviour, IInteractable
     {
         CaseData caseData = CaseManager.Instance.GetCurrentCase();
 
-        Debug.Log($"Carta abierta del caso: {caseData.caseID}");
-
         string fullText =
             $"{caseData.title}\n\n{caseData.description}";
 
-        LetterUIController.Instance.ShowLetter(fullText);
-
-        LetterUIController.Instance.OnLetterClosed = () =>
-        {
-            ArtworkSpawner.Instance.SpawnArtworkForCurrentCase();
-        };
+        LetterUIController.Instance.ShowLetter_WithCallback(
+            fullText,
+            () => ArtworkSpawner.Instance.SpawnArtworkForCurrentCase()
+        );
     }
+
 }
