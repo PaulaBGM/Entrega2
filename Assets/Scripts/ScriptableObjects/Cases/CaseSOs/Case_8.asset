@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82b4514643ed9c344836048801e8bee1, type: 3}
-  m_Name: Case_1
+  m_Name: Case_8
   m_EditorClassIdentifier: 
-  caseID: case_1
-  title: "oto\xF1o"
-  description: rrrrrr
-  artworkSprite: {fileID: -6369879539158651996, guid: f29b6c821a753d24ca67b809ea1aff39, type: 3}
+  caseID: 
+  title: 
+  description: 
+  artworkSprite: {fileID: 0}
   isGenuine: 1
   difficulty: 0.2
   clues: []

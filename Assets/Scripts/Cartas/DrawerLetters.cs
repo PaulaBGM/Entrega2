@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class DrawerLetters : MonoBehaviour, IInteractable
 {
+
+    private void Awake()
+    {
+
+    }
+
     public void Interact()
     {
         CaseData caseData = CaseManager.Instance.GetCurrentCase();
@@ -16,5 +22,4 @@ public class DrawerLetters : MonoBehaviour, IInteractable
             () => ArtworkSpawner.Instance.SpawnArtworkForCurrentCase()
         );
     }
-
 }
