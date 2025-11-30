@@ -10,26 +10,24 @@ namespace Items
     [RequireComponent(typeof(SmoothTransform))]
     public abstract class ItemBase : MonoBehaviour, ICollectable, IInteractable, ISelectable
     {
-        private bool _isCollected = false;
-        private Collider2D _collider;
-    
-        private SmoothTransform _smoothTransform;
-        
+        protected bool _isCollected = false;
+        protected Collider2D _collider;
+        protected SmoothTransform _smoothTransform;
+
         public event Action OnCollect;
         public event Action OnUncollect;
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             _smoothTransform = GetComponent<SmoothTransform>();
             _collider = GetComponent<Collider2D>();
         }
 
-        public void Collect()
+        public virtual void Collect()
         {
             _isCollected = true;
             StartCoroutine(CollectedTick());
             _smoothTransform.ScaleSmooth(new Vector3(1.5f, 1.5f, 1.5f));
-            
             OnCollect?.Invoke();
         }
 
@@ -37,37 +35,32 @@ namespace Items
         {
             _isCollected = false;
             _smoothTransform.ScaleSmooth(Vector3.one);
-            
             OnUncollect?.Invoke();
         }
 
-        public Collider2D GetCollider() => _collider;
+        public virtual Collider2D GetCollider() => _collider;
 
-        public virtual void Interact()
+        public virtual void Interact() { }
+
+        public virtual void Select()
         {
-            Debug.Log("Interacting TestItem");
-        }
-
-        public void Select()
-        { 
             Collect();
-            _collider.enabled = false;
         }
 
-        public void Deselect()
+        public virtual void Deselect()
         {
             Uncollect();
-            _collider.enabled = true;
         }
 
-        private IEnumerator CollectedTick()
+        protected IEnumerator CollectedTick()
         {
             while (_isCollected)
             {
-                _smoothTransform.MoveSmooth(
-                    Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
+                Vector3 mousePos = Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                mousePos.z = 0;
+                _smoothTransform.MoveSmooth(mousePos);
                 yield return null;
             }
         }
     }
-} 
+}

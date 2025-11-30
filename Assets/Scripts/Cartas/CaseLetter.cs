@@ -1,87 +1,59 @@
 using ArtWorks;
-using Interfaces;
+using Items;
+using UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class CaseLetter : MonoBehaviour, ISelectable, ICollectable, IInteractable
+public class CaseLetter : ItemBase
 {
-    [Header("Datos del caso")]
     public CaseData caseData;
 
-    private bool _isCollected = false;
-    private bool _isSelected = false;
-
-    private Collider2D _collider;
-    private Vector3 _originalPosition;
     private Transform _originalParent;
 
-    private void Awake()
+    protected override void Awake()
     {
-        _collider = GetComponent<Collider2D>();
+        base.Awake();
         _originalParent = transform.parent;
-        _originalPosition = transform.position;
     }
 
-    public void Select()
+    public override void Select()
     {
-        _isSelected = true;
+        Collect();
     }
 
-    public void Deselect()
+    public override void Deselect()
     {
-        _isSelected = false;
+        Uncollect();
     }
 
-    public void Collect()
+    public override void Collect()
     {
-        _isCollected = true;
-        _originalParent = transform.parent;
+        base.Collect();
         transform.SetParent(null);
     }
 
-    public void Uncollect()
+    public override void Uncollect()
     {
-        _isCollected = false;
-        transform.SetParent(_originalParent);
-        transform.position = _originalPosition;
+        base.Uncollect();
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+
+        if (LetterDropZone.Instance != null && LetterDropZone.Instance.IsOverZone(mousePos))
+        {
+            OpenLetter();
+        }
     }
 
-    public Collider2D GetCollider() => _collider;
-
-    public void Interact()
+    private void OpenLetter()
     {
+        string fullText = $"{caseData.title}\n\n{caseData.description}";
+
         LetterUIController.Instance.ShowLetter_WithCallback(
-            $"{caseData.title}\n\n{caseData.description}",
+            fullText,
             () =>
             {
                 ArtworkSpawner.Instance.SpawnArtworkForCurrentCase();
-
-                _originalParent = transform.parent;
             }
         );
-    }
-
-    private Vector3 _offset;
-    private bool _dragging = false;
-
-    private void OnMouseDown()
-    {
-        Collect();
-        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       // mousePos.z = 0;
-        //_offset = transform.position - mousePos;
-        _dragging = true;
-    }
-
-    private void OnMouseDrag()
-    {
-        if (!_dragging) return;
-        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mousePos.z = 0;
-        //transform.position = mousePos + _offset;
-    }
-
-    private void OnMouseUp()
-    {
-        _dragging = false;
     }
 }
