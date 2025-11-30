@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject mainMenuCanvas;
     [SerializeField] private Button playButton;
+    [SerializeField] private Button optionsButton;
     [SerializeField] private Button quitButton;
 
     private void Awake()
@@ -18,16 +19,33 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         if (playButton) playButton.onClick.AddListener(OnPlay);
+        if (optionsButton) optionsButton.onClick.AddListener(OnOpenOptions);
         if (quitButton) quitButton.onClick.AddListener(OnQuit);
+
     }
 
-    public void OnPlay()
+    private void OnPlay()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void OnQuit()
+    private void OnOpenOptions()
+    {
+        UIEvents.RequestOpenOptions(false, "MainMenu");
+        if (mainMenuCanvas) mainMenuCanvas.SetActive(false);
+
+        UIEvents.OnOptionsClosed += HandleOptionsClosed;
+    }
+
+    private void HandleOptionsClosed()
+    {
+        if (mainMenuCanvas) mainMenuCanvas.SetActive(true);
+        UIEvents.OnOptionsClosed -= HandleOptionsClosed;
+    }
+
+    private void OnQuit()
     {
         Application.Quit();
     }
 }
+
