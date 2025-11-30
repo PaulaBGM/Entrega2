@@ -9,7 +9,12 @@ public class CaseLetterPile : MonoBehaviour
     [Header("Datos del día")]
     [SerializeField] private CaseDayData dayData;
 
-    private Stack<CaseLetter> _pile = new Stack<CaseLetter>();
+    [Header("Ajustes visuales")]
+    [SerializeField] private float verticalOffset = -0.15f;
+    [SerializeField] private int sortingBase = 10;
+    [SerializeField] private int sortingStep = 2;
+
+    private readonly Stack<CaseLetter> _pile = new Stack<CaseLetter>();
 
     private void Start()
     {
@@ -18,15 +23,21 @@ public class CaseLetterPile : MonoBehaviour
 
     private void SpawnPile()
     {
+        int index = 0;
+
         foreach (CaseData caseData in dayData.cases)
         {
             GameObject letterObj = Instantiate(caseLetterPrefab, transform);
             CaseLetter letter = letterObj.GetComponent<CaseLetter>();
             letter.caseData = caseData;
 
-            // Posición inicial sobre el montón
-            letterObj.transform.localPosition = Vector3.zero + Vector3.up * (_pile.Count * 0.02f);
+            letterObj.transform.localPosition = new Vector3(0, verticalOffset * index, 0);
+
+            SpriteRenderer sr = letterObj.GetComponentInChildren<SpriteRenderer>();
+            sr.sortingOrder = sortingBase + (index * sortingStep);
+
             _pile.Push(letter);
+            index++;
         }
     }
 

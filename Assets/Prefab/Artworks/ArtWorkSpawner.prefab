@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8e638e8dfdbf44088887bc46884f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artworkPrefab: {fileID: 0}
+  artworkPrefab: {fileID: 8015250495770262558, guid: 8b567ba3407c89d4f963e75026aec57e, type: 3}
   spawnPoint: {fileID: 8956869529151684000}
   objectivePoint: {fileID: 4899310881546607272}
 --- !u!1 &3869709930356161735

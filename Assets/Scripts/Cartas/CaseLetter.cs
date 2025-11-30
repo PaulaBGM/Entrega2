@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class CaseLetter : ItemBase
 {
     public CaseData caseData;
-
     private Transform _originalParent;
 
     protected override void Awake()
@@ -35,7 +34,6 @@ public class CaseLetter : ItemBase
     public override void Uncollect()
     {
         base.Uncollect();
-
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         if (LetterDropZone.Instance != null && LetterDropZone.Instance.IsOverZone(mousePos))
@@ -48,12 +46,9 @@ public class CaseLetter : ItemBase
     {
         string fullText = $"{caseData.title}\n\n{caseData.description}";
 
-        LetterUIController.Instance.ShowLetter_WithCallback(
-            fullText,
-            () =>
-            {
-                ArtworkSpawner.Instance.SpawnArtworkForCurrentCase();
-            }
-        );
+        LetterUIController.Instance.ShowLetter_WithCallback(fullText, () =>
+        {
+            ArtworkSpawner.Instance.SpawnArtworkForCurrentCase();
+        });
     }
 }

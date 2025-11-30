@@ -9,35 +9,54 @@ public class LetterUIController : MonoBehaviour
     [SerializeField] private GameObject letterPanel;
     [SerializeField] private TextMeshProUGUI letterText;
 
-    // Evento que se ejecuta cuando la carta se cierra SOLO si se pidió explícitamente
     private System.Action _onCloseCallback;
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
+        {
             Destroy(gameObject);
-        else
-            Instance = this;
+            return;
+        }
+
+        Instance = this;
     }
+
     public void ShowLetter_ReadOnly(string text)
     {
-        _onCloseCallback = null;      // No ejecutar nada al cerrar
+        if (letterPanel == null || letterText == null)
+            return;
+
+        _onCloseCallback = null;
+
         letterText.text = text;
         letterPanel.SetActive(true);
     }
 
     public void ShowLetter_WithCallback(string text, System.Action onClosed)
     {
-        _onCloseCallback = onClosed;  // Guardar acción
+        if (Instance == null)
+            return;
+
+        if (letterPanel == null || letterText == null)
+            return;
+
+        _onCloseCallback = onClosed;
+
         letterText.text = text;
         letterPanel.SetActive(true);
     }
 
     public void CloseLetter()
     {
-        letterPanel.SetActive(false);
+        if (letterPanel != null)
+            letterPanel.SetActive(false);
 
-        _onCloseCallback?.Invoke();
-        _onCloseCallback = null; // limpiar
+        if (_onCloseCallback != null)
+        {
+            _onCloseCallback.Invoke();
+        }
+
+        _onCloseCallback = null;
     }
 }
