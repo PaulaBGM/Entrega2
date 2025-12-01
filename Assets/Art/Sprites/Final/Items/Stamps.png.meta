@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: bb3a53fa5299e41438ded9fb9202605e
+guid: 78907079666e3d34ba64a9c55474724c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2362142496030901803
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (3)_0"
+      213: -2791575380922999224
+    second: Stamps_0
   - first:
-      213: 7914556894745374124
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (3)_1"
+      213: 9166873909268431296
+    second: Stamps_1
+  - first:
+      213: 4764879631733662488
+    second: Stamps_2
+  - first:
+      213: -3387579398826105982
+    second: Stamps_3
+  - first:
+      213: 2889894197750915938
+    second: Stamps_4
+  - first:
+      213: -4635459801796621616
+    second: Stamps_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -78,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -99,88 +111,137 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zoom
+      name: Stamps_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 28
-        width: 113
-        height: 200
+        x: 57
+        y: 118
+        width: 149
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d9393f3aebf73fd0800000000000000
-      internalID: -2362142496030901803
+      spriteID: 84edb504bf45249d0800000000000000
+      internalID: -2791575380922999224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flashlight
+      name: Stamps_1
       rect:
         serializedVersion: 2
-        x: 332
-        y: 17
-        width: 111
-        height: 226
+        x: 58
+        y: 80
+        width: 175
+        height: 122
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cadaae9009726dd60800000000000000
-      internalID: 7914556894745374124
+      spriteID: 0c1cdb69047473f70800000000000000
+      internalID: 9166873909268431296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 52
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813aaf697c0402240800000000000000
+      internalID: 4764879631733662488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_3
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 122
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 283e9842c76ecf0d0800000000000000
+      internalID: -3387579398826105982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_4
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 84
+        width: 175
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263e7672677fa1820800000000000000
+      internalID: 2889894197750915938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 56
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da4f47bed98bafb0800000000000000
+      internalID: -4635459801796621616
       vertices: []
       indices: 
       edges: []
@@ -189,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5765a7ac32bc2524a83e3269dc70c5f5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +259,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      flashlight: 7914556894745374124
-      zoom: -2362142496030901803
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
