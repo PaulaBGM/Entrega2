@@ -15,8 +15,8 @@ MonoBehaviour:
   caseID: case_1
   title: "oto\xF1o"
   description: rrrrrr
-  artworkSprite: {fileID: -6369879539158651996, guid: f29b6c821a753d24ca67b809ea1aff39, type: 3}
-  isGenuine: 1
+  artWorkPrefab: {fileID: 0}
+  isGenuine: 0
   difficulty: 0.2
   clues: []
   rewardIfCorrect: 100
