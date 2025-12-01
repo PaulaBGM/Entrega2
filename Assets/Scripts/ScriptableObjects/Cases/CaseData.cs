@@ -1,3 +1,4 @@
+using ArtWorks;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CaseData", menuName = "TheExpertsEye/CaseData")]
@@ -6,13 +7,13 @@ public class CaseData : ScriptableObject
     public string caseID;
     public string title;
     [TextArea(3, 6)] public string description;
-    public Sprite artworkSprite;
+    public ArtWork artWorkPrefab;
     [Tooltip("Verdadero = obra genuina")]
     public bool isGenuine = true;
-    [Range(0, 1)] public float difficulty = 0.2f; // 0 fácil - 1 difícil
+    [Range(0, 1)] public float difficulty = 0.2f; // 0 fï¿½cil - 1 difï¿½cil
     [Tooltip("Lista de pistas. El orden define la dificultad de obtenerlas.")]
     public string[] clues;
-    [Tooltip("Recompensa económica si autentificas correctamente (o penalización).")]
+    [Tooltip("Recompensa econï¿½mica si autentificas correctamente (o penalizaciï¿½n).")]
     public int rewardIfCorrect = 100;
     public int penaltyIfWrong = 50;
 }
