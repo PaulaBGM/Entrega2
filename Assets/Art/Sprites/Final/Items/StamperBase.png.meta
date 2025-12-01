@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2532134941353be458c6fbf7e5917d59
+guid: 5a8ee385fa780bb4595cd1bc37c94454
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7096571417805779169
-    second: MailBox_0
+      213: 5131864073108457490
+    second: StamperBase_0
+  - first:
+      213: -4828610994028782250
+    second: StamperBase_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MailBox_0
+      name: StamperBase_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 100
-        width: 534
-        height: 281
+        x: 19
+        y: 65
+        width: 217
+        height: 134
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e0f081fa161c7260800000000000000
-      internalID: 7096571417805779169
+      spriteID: 21808394f2b083740800000000000000
+      internalID: 5131864073108457490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StamperBase_1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 65
+        width: 217
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65d5e5e42e35dfcb0800000000000000
+      internalID: -4828610994028782250
       vertices: []
       indices: 
       edges: []
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MailBox_0: 7096571417805779169
+      StamperBase_0: 5131864073108457490
+      StamperBase_1: -4828610994028782250
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

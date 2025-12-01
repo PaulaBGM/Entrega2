@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 2532134941353be458c6fbf7e5917d59
+guid: 78907079666e3d34ba64a9c55474724c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7096571417805779169
-    second: MailBox_0
+      213: -2791575380922999224
+    second: Stamps_0
+  - first:
+      213: 9166873909268431296
+    second: Stamps_1
+  - first:
+      213: 4764879631733662488
+    second: Stamps_2
+  - first:
+      213: -3387579398826105982
+    second: Stamps_3
+  - first:
+      213: 2889894197750915938
+    second: Stamps_4
+  - first:
+      213: -4635459801796621616
+    second: Stamps_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MailBox_0
+      name: Stamps_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 100
-        width: 534
-        height: 281
+        x: 57
+        y: 118
+        width: 149
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +156,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e0f081fa161c7260800000000000000
-      internalID: 7096571417805779169
+      spriteID: 84edb504bf45249d0800000000000000
+      internalID: -2791575380922999224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 80
+        width: 175
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1cdb69047473f70800000000000000
+      internalID: 9166873909268431296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 52
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813aaf697c0402240800000000000000
+      internalID: 4764879631733662488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_3
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 122
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 283e9842c76ecf0d0800000000000000
+      internalID: -3387579398826105982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_4
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 84
+        width: 175
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263e7672677fa1820800000000000000
+      internalID: 2889894197750915938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamps_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 56
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da4f47bed98bafb0800000000000000
+      internalID: -4635459801796621616
       vertices: []
       indices: 
       edges: []
@@ -161,7 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MailBox_0: 7096571417805779169
+      Stamps_0: -2791575380922999224
+      Stamps_1: 9166873909268431296
+      Stamps_2: 4764879631733662488
+      Stamps_3: -3387579398826105982
+      Stamps_4: 2889894197750915938
+      Stamps_5: -4635459801796621616
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
