@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Case_1
   m_EditorClassIdentifier: 
   caseID: case_1
-  title: "oto\xF1o"
-  description: rrrrrr
+  title: Ocaso en el Valle
+  description: "Artista declarado: Sonsolla (1860\u20131909)\nA\xF1o declarado: 1907\nT\xE9cnica:
+    \xD3leo sobre lienzo\nDimensiones: 81,4 \xD7 106,5 cm\nMateriales declarados:
+    Pigmentos naturales, barniz damar\nFirma: \u201CSonsolla\u201D, esquina inferior
+    derecha, firma cursiva\nEstado de conservaci\xF3n declarado: \u201CLigera restauraci\xF3n
+    en 1998 (limpieza superficial)\u201D"
   artworkSprite: {fileID: -6369879539158651996, guid: f29b6c821a753d24ca67b809ea1aff39, type: 3}
-  isGenuine: 1
+  isGenuine: 0
   difficulty: 0.2
   clues: []
   rewardIfCorrect: 100
