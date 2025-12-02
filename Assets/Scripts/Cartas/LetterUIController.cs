@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class LetterUIController : MonoBehaviour
 {
@@ -7,9 +9,14 @@ public class LetterUIController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject letterPanel;
-    [SerializeField] private TextMeshProUGUI letterText;
+    [Header("Text Objects")]
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private Button closeButton;
 
     private System.Action _onCloseCallback;
+    private List<string> _pages = new List<string>();
+    private int _currentPage = 0;
 
     private void Awake()
     {
@@ -20,43 +27,82 @@ public class LetterUIController : MonoBehaviour
         }
 
         Instance = this;
+
+        if (closeButton != null)
+        {
+            closeButton.onClick.RemoveAllListeners();
+            closeButton.onClick.AddListener(OnCloseButtonPressed);
+        }
     }
 
-    public void ShowLetter_ReadOnly(string text)
+    public void ShowLetter_WithCallback(string formattedTitle, string formattedDescription, System.Action onClosed)
     {
-        if (letterPanel == null || letterText == null)
-            return;
-
-        _onCloseCallback = null;
-
-        letterText.text = text;
-        letterPanel.SetActive(true);
-    }
-
-    public void ShowLetter_WithCallback(string text, System.Action onClosed)
-    {
-        if (Instance == null)
-            return;
-
-        if (letterPanel == null || letterText == null)
-            return;
+        if (letterPanel == null || titleText == null || descriptionText == null) return;
 
         _onCloseCallback = onClosed;
 
-        letterText.text = text;
+        titleText.text = formattedTitle;
+
+        GeneratePages(formattedDescription);
+        _currentPage = 0;
+
+        if (_pages.Count == 0)
+        {
+            _pages.Add(string.Empty);
+        }
+
+        Debug.Log($"ShowLetter: páginas {_pages.Count}");
+        ShowPage(0);
         letterPanel.SetActive(true);
+    }
+
+    private void GeneratePages(string fullText)
+    {
+        _pages.Clear();
+
+        int maxChars = 350;
+        if (string.IsNullOrEmpty(fullText))
+        {
+            _pages.Add(string.Empty);
+            return;
+        }
+
+        for (int i = 0; i < fullText.Length; i += maxChars)
+        {
+            int length = Mathf.Min(maxChars, fullText.Length - i);
+            _pages.Add(fullText.Substring(i, length));
+        }
+    }
+
+    private void ShowPage(int index)
+    {
+        if (index < 0 || index >= _pages.Count) return;
+
+        _currentPage = index;
+        descriptionText.text = _pages[index];
+        Debug.Log($"Mostrando página {_currentPage + 1} / {_pages.Count}");
+    }
+
+    public void OnCloseButtonPressed()
+    {
+        Debug.Log("CloseButton pressed");
+        if (_currentPage < _pages.Count - 1)
+        {
+            _currentPage++;
+            ShowPage(_currentPage);
+        }
+        else
+        {
+            CloseLetter();
+        }
     }
 
     public void CloseLetter()
     {
-        if (letterPanel != null)
-            letterPanel.SetActive(false);
-
-        if (_onCloseCallback != null)
-        {
-            _onCloseCallback.Invoke();
-        }
-
+        letterPanel.SetActive(false);
+        _onCloseCallback?.Invoke();
         _onCloseCallback = null;
+        _pages.Clear();
+        _currentPage = 0;
     }
 }

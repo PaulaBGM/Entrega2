@@ -14,7 +14,10 @@ public class CaseLetterPile : MonoBehaviour
     [SerializeField] private int sortingBase = 10;
     [SerializeField] private int sortingStep = 2;
 
-    private readonly Stack<CaseLetter> _pile = new Stack<CaseLetter>();
+    [Header("Sprites posibles")]
+    [SerializeField] private Sprite[] envelopeSprites;
+
+    private readonly List<CaseLetter> _pile = new List<CaseLetter>();
 
     private void Start()
     {
@@ -23,34 +26,43 @@ public class CaseLetterPile : MonoBehaviour
 
     private void SpawnPile()
     {
-        int index = 0;
-
-        foreach (CaseData caseData in dayData.cases)
+        for (int i = dayData.cases.Count - 1; i >= 0; i--)
         {
+            CaseData caseData = dayData.cases[i];
+
             GameObject letterObj = Instantiate(caseLetterPrefab, transform);
             CaseLetter letter = letterObj.GetComponent<CaseLetter>();
+
             letter.caseData = caseData;
 
+            int index = _pile.Count;
             letterObj.transform.localPosition = new Vector3(0, verticalOffset * index, 0);
 
             SpriteRenderer sr = letterObj.GetComponentInChildren<SpriteRenderer>();
             sr.sortingOrder = sortingBase + (index * sortingStep);
 
-            _pile.Push(letter);
-            index++;
+            if (envelopeSprites.Length > 0)
+                sr.sprite = envelopeSprites[Random.Range(0, envelopeSprites.Length)];
+
+            _pile.Add(letter);
+        }
+
+        UpdateInteraction();
+    }
+
+    private void UpdateInteraction()
+    {
+        for (int i = 0; i < _pile.Count; i++)
+        {
+            bool isTop = (i == _pile.Count - 1);
+            _pile[i].SetInteractable(isTop);
         }
     }
 
-    public void RemoveTopLetter()
+    public void RemoveTopLetter(CaseLetter letter)
     {
-        if (_pile.Count == 0) return;
-        _pile.Pop();
+        _pile.Remove(letter);
+        Destroy(letter.gameObject);
+        UpdateInteraction();
     }
-
-    public CaseLetter PeekTopLetter()
-    {
-        return _pile.Count > 0 ? _pile.Peek() : null;
-    }
-
-    public int RemainingLetters() => _pile.Count;
 }

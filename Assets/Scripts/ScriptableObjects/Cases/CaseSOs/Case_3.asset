@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b4514643ed9c344836048801e8bee1, type: 3}
   m_Name: Case_3
   m_EditorClassIdentifier: 
-  caseID: 
-  title: 
-  description: 
-  artworkSprite: {fileID: 0}
+  caseID: case_3
+  title: caso 3
+  description: caso 3
+  artWorkPrefab: {fileID: 0}
   isGenuine: 1
-  difficulty: 0.2
   clues: []
   rewardIfCorrect: 100
   penaltyIfWrong: 50

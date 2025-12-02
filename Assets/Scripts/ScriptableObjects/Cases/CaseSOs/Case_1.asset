@@ -14,10 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caseID: case_1
   title: "oto\xF1o"
-  description: rrrrrr
-  artWorkPrefab: {fileID: 0}
+  description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus
+    ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+    convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla
+    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+    nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora
+    torquent per conubia nostra inceptos himenaeos.\r\n\r1\nLorem ipsum dolor sit
+    amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+    sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
+    sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+    Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper
+    vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos
+    himenaeos.\r\n\r2\nLorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+    faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus
+    duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla
+    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+    nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora
+    torquent per conubia nostra inceptos himenaeos.\r\n\r3\nLorem ipsum dolor sit
+    amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+    sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
+    sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+    Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper
+    vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos
+    himenaeos.\r\n\r4\nLorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+    faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus
+    duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla
+    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+    nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora
+    torquent per conubia nostra inceptos himenaeos."
+  artWorkPrefab: {fileID: 2719531461719534455, guid: a785b30483845c540b851b9437a8270a, type: 3}
   isGenuine: 0
-  difficulty: 0.2
   clues: []
   rewardIfCorrect: 100
   penaltyIfWrong: 50
