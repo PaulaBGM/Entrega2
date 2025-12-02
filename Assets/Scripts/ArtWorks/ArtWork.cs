@@ -40,11 +40,6 @@ namespace ArtWorks
         {
             CaseData = data;
             IsGenuine = data.isGenuine;
-
-            if (spriteRenderer != null && data.artworkSprite != null)
-            {
-                spriteRenderer.sprite = data.artworkSprite;
-            }
         }
 
         public void Collect()

@@ -7,7 +7,7 @@ namespace ArtWorks
     {
         public static ArtworkSpawner Instance { get; private set; }
 
-        [SerializeField] private GameObject artworkPrefab;
+        [SerializeField] private GameObject[] artworkPrefab;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private Transform objectivePoint;
 
@@ -57,10 +57,10 @@ namespace ArtWorks
 
             Debug.Log("Instanciando obra…");
 
-            GameObject obj = Instantiate(artworkPrefab, spawnPoint.position, Quaternion.identity);
+            ArtWork artwork = Instantiate(caseData.artWorkPrefab, spawnPoint.position, Quaternion.identity);
             Debug.Log("Instancia creada correctamente");
 
-            _artWorkSpawned = obj.GetComponentInChildren<ArtWork>();
+            _artWorkSpawned = artwork.GetComponent<ArtWork>();
             Debug.Log($"ArtWork asignado? {_artWorkSpawned != null}");
 
             _artWorkSpawned.SetupFromCase(caseData);
