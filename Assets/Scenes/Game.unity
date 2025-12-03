@@ -3259,6 +3259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LetterPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2079293557063965604, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6494540700444510881, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
