@@ -16,8 +16,8 @@ public class CaseData : ScriptableObject
     [Tooltip("Verdadero = obra genuina")]
     public bool isGenuine = true;
 
-    [Tooltip("Lista de pistas. El orden define la dificultad de obtenerlas.")]
-    public string[] clues;
+    [Tooltip("Hotspots asociados a este caso (se instancian en la obra).")]
+    public Hotspot[] hotspots;
 
     [Tooltip("Recompensa economica si autentificas correctamente (o penalizacion).")]
     public int rewardIfCorrect = 100;
