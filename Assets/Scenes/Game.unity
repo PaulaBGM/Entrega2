@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 168213659}
   - component: {fileID: 168213660}
   - component: {fileID: 168213661}
+  - component: {fileID: 168213662}
   m_Layer: 0
   m_Name: GoodSeal
   m_TagString: Untagged
@@ -278,6 +279,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de66efda580108b40be1b53d96a261bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &168213662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168213658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a704a21a54580ae4abeaa7a125ad18d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveConstant: 10
+  _scaleConstant: 10
 --- !u!1001 &172760405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2074,6 +2089,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1616948935}
   - component: {fileID: 1616948936}
+  - component: {fileID: 1616948938}
+  - component: {fileID: 1616948937}
   m_Layer: 0
   m_Name: BadSeal
   m_TagString: Untagged
@@ -2143,6 +2160,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1616948937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616948934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de66efda580108b40be1b53d96a261bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1616948938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616948934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a704a21a54580ae4abeaa7a125ad18d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveConstant: 10
+  _scaleConstant: 10
 --- !u!1 &1631628418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,7 +2503,7 @@ Transform:
   m_GameObject: {fileID: 2018780674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -48, y: 0, z: 0}
   m_LocalScale: {x: 2.9721365, y: 2.9721365, z: 2.9721365}
   m_ConstrainProportionsScale: 0
   m_Children:
