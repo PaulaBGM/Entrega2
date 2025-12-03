@@ -36,7 +36,6 @@ public class CaseManager : MonoBehaviour
 
         bool isCorrect = (caseData.isGenuine == hasPassed);
 
-        // Solo feedback por consola. PlayerStatus ya aplica consecuencias.
         if (isCorrect)
         {
             Debug.Log($"Caso {caseData.caseID} decidido correctamente.");

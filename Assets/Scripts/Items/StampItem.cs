@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 
 public class StampItem : ItemBase
 {
+    [SerializeField] private bool isApproveStamp;
+
+    public bool IsApproveStamp => isApproveStamp;
+
     private bool _isHeld;
 
     public override void Select()
