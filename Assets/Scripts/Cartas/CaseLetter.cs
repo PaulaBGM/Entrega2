@@ -21,7 +21,6 @@ public class CaseLetter : ItemBase
     private Transform _originalParent;
     private bool _canInteract = true;
 
-    [Header("Sprites")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite closedSprite;
     [SerializeField] private Sprite sealedSprite;
@@ -35,7 +34,6 @@ public class CaseLetter : ItemBase
             spriteRenderer.sprite = closedSprite;
     }
 
-    // Permite que solo la carta superior de la pila sea interactuable
     public void SetInteractable(bool value)
     {
         _canInteract = value;
@@ -71,17 +69,21 @@ public class CaseLetter : ItemBase
 
         if (State == LetterState.Closed)
         {
-            if (LetterDropZone.Instance != null && LetterDropZone.Instance.IsOverZone(mousePos))
-            {
+            var dropZone = FindFirstObjectByType<LetterDropZone>();
+            if (dropZone != null && dropZone.IsOverZone(mousePos))
                 OpenLetter();
-            }
+        }
+        else if (State == LetterState.Open)
+        {
+            var printer = FindFirstObjectByType<PrinterDropZone>();
+            if (printer != null)
+                printer.TryProcessLetter(this, mousePos);
         }
         else if (State == LetterState.Sealed)
         {
-            if (Mailbox.Instance != null && Mailbox.Instance.IsOverZone(mousePos))
-            {
+            var mailbox = FindFirstObjectByType<Mailbox>();
+            if (mailbox != null && mailbox.IsOverZone(mousePos))
                 SendLetter();
-            }
         }
     }
 
@@ -117,8 +119,7 @@ public class CaseLetter : ItemBase
     {
         State = LetterState.Sent;
 
-        CaseLetterPile pile = FindFirstObjectByType<CaseLetterPile>()
-;
+        CaseLetterPile pile = FindFirstObjectByType<CaseLetterPile>();
         if (pile != null)
             pile.RemoveTopLetter(this);
 

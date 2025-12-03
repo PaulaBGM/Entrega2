@@ -1,9 +1,21 @@
 using UnityEngine;
 
-public class PrinterDropZone : LetterDropZone
+public class PrinterDropZone : MonoBehaviour
 {
     [SerializeField] private GameObject letterPanelPrefab;
     [SerializeField] private Vector3 panelOffset = new Vector3(1f, 0f, 0f);
+
+    private Collider2D _collider;
+
+    private void Awake()
+    {
+        _collider = GetComponent<Collider2D>();
+    }
+
+    public bool IsOverZone(Vector2 position)
+    {
+        return _collider.OverlapPoint(position);
+    }
 
     public void TryProcessLetter(CaseLetter letter, Vector2 mousePos)
     {
