@@ -3617,14 +3617,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LetterPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 2079293557063965604, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3639350276966064842, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6494540700444510881, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3704,10 +3696,6 @@ PrefabInstance:
     - target: {fileID: 6494540700444510881, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764384901975130082, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

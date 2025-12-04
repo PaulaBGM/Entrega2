@@ -1,15 +1,27 @@
+using Interfaces;
+using Managers;
 using UnityEngine;
 using UnityEngine.UI;
-using ArtWorks;
-using Managers;
 
-public class StampZone : MonoBehaviour
+public class StampZone : MonoBehaviour, IInteractable
 {
     [SerializeField] private Image stampPreview;
     [SerializeField] private Sprite approveSprite;
     [SerializeField] private Sprite rejectSprite;
 
     private bool _stampApplied;
+
+    private Collider2D _collider;
+
+    private void Awake()
+    {
+        _collider = GetComponent<Collider2D>();
+    }
+
+    public bool IsOverZone(Vector2 position)
+    {
+        return _collider.OverlapPoint(position);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,11 +30,14 @@ public class StampZone : MonoBehaviour
 
         if (other.TryGetComponent<StampItem>(out var stamp))
         {
-            bool isApprove = stamp.IsApproveStamp;
-            ApplyStamp(isApprove);
+            // Solo estampa si el sello está siendo sujetado
+            if (stamp.IsHeld)
+            {
+                ApplyStamp(stamp.IsApproveStamp);
+            }
         }
     }
-
+    public void Interact() { }
     private void ApplyStamp(bool approved)
     {
         _stampApplied = true;

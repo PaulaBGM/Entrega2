@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 public class StampItem : ItemBase
 {
     [SerializeField] private bool isApproveStamp;
-
     public bool IsApproveStamp => isApproveStamp;
+
+    public bool IsHeld => _isHeld;  // <-- añadimos esto
 
     private bool _isHeld;
 
