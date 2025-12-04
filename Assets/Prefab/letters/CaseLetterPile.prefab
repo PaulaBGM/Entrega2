@@ -54,6 +54,9 @@ MonoBehaviour:
   - {fileID: -812603101270696245, guid: 1aaf4ca2c1e4ef543b515978ab995985, type: 3}
   - {fileID: 8031679433600898884, guid: 9d8aa8db9a296744993a7a4caea098d7, type: 3}
   - {fileID: 3972127279662159807, guid: 477eed3460ab0914f9bce9383bd6597f, type: 3}
+  - {fileID: 6476337079245353173, guid: 1aaf4ca2c1e4ef543b515978ab995985, type: 3}
+  - {fileID: -8980563547991102674, guid: 9d8aa8db9a296744993a7a4caea098d7, type: 3}
+  - {fileID: 3792565815810029712, guid: 477eed3460ab0914f9bce9383bd6597f, type: 3}
 --- !u!1 &5327597611930871280
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,16 +22,48 @@ public class CaseLetter : ItemBase
     private bool _canInteract = true;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [Header("Sprites")]
     [SerializeField] private Sprite closedSprite;
+    [SerializeField] private Sprite openSprite;
     [SerializeField] private Sprite sealedSprite;
+
+    [Header("Sprite Scales")]
+    [SerializeField] private Vector3 closedScale = new Vector3(1f, 1f, 1f);
+    [SerializeField] private Vector3 openScale = new Vector3(0.02f, 0.02f, 1f);
+    [SerializeField] private Vector3 sealedScale = new Vector3(0.7f, 0.7f, 1f);
 
     protected override void Awake()
     {
         base.Awake();
         _originalParent = transform.parent;
 
-        if (spriteRenderer != null && closedSprite != null)
-            spriteRenderer.sprite = closedSprite;
+        UpdateSprite();
+    }
+    private void UpdateSprite()
+    {
+        if (spriteRenderer == null) return;
+
+        switch (State)
+        {
+            case LetterState.Closed:
+                spriteRenderer.sprite = closedSprite;
+                spriteRenderer.transform.localScale = closedScale;
+                break;
+
+            case LetterState.Open:
+                spriteRenderer.sprite = openSprite;
+                spriteRenderer.transform.localScale = openScale;
+                break;
+
+            case LetterState.Sealed:
+                spriteRenderer.sprite = sealedSprite;
+                spriteRenderer.transform.localScale = sealedScale;
+                break;
+
+            case LetterState.Sent:
+                break;
+        }
     }
 
     public void SetInteractable(bool value)
@@ -86,10 +118,10 @@ public class CaseLetter : ItemBase
                 SendLetter();
         }
     }
-
     private void OpenLetter()
     {
         State = LetterState.Open;
+        UpdateSprite();
 
         string title = string.IsNullOrWhiteSpace(caseData.title) ? "SIN TÍTULO" : caseData.title.Trim();
         string desc = string.IsNullOrWhiteSpace(caseData.description) ? "SIN DESCRIPCIÓN" : caseData.description.Trim();
@@ -110,9 +142,7 @@ public class CaseLetter : ItemBase
             return;
 
         State = LetterState.Sealed;
-
-        if (spriteRenderer != null && sealedSprite != null)
-            spriteRenderer.sprite = sealedSprite;
+        UpdateSprite();
     }
 
     private void SendLetter()

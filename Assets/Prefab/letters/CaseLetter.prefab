@@ -135,6 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caseData: {fileID: 0}
+  spriteRenderer: {fileID: 6030509692323109452}
+  closedSprite: {fileID: 0}
+  openSprite: {fileID: 8031679433600898884, guid: 04e3a8b437735a448a94eff46345a999, type: 3}
+  sealedSprite: {fileID: 0}
+  closedScale: {x: 1, y: 1, z: 1}
+  openScale: {x: 0.15, y: 0.15, z: 1}
+  sealedScale: {x: 0.15, y: 0.15, z: 1}
 --- !u!114 &-1365124098381005910
 MonoBehaviour:
   m_ObjectHideFlags: 0
