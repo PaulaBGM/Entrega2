@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f22b6c662031ea43ab784cd01ca0055, type: 3}
   m_Name: Page 4
   m_EditorClassIdentifier: 
-  bodyText: "INTRODUCCI\xD3N"
+  bodyText: Estos son los pigmentitos :3
   images:
   - {fileID: 21300000, guid: 4f4afb8703021cb4e900370e6dbf2a97, type: 3}
   - {fileID: 21300000, guid: 4f4afb8703021cb4e900370e6dbf2a97, type: 3}

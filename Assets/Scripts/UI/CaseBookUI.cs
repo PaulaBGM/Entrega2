@@ -44,6 +44,12 @@ namespace UI
             UpdateNavigationButtons();
         }
 
+        private void OnDisable()
+        {
+            if (_playerStatus != null)
+                _playerStatus.UnsubscribeToOnStatusUpdated(UpdateStatusTMP);
+        }
+
         public void RefreshStatus()
         {
             var status = _playerStatus.GetCurrentStatus();
@@ -52,9 +58,9 @@ namespace UI
 
         private void UpdateStatusTMP((int reputation, int ethic, int funds) status)
         {
-            fundsTMP.text = $"{status.funds}€";
-            ethicTMP.text = $"{status.ethic}%";
-            reputationTMP.text = $"{status.reputation}%";
+            if (fundsTMP != null) fundsTMP.text = $"{status.funds}€";
+            if (ethicTMP != null) ethicTMP.text = $"{status.ethic}%";
+            if (reputationTMP != null) reputationTMP.text = $"{status.reputation}%";
         }
 
         public void RefreshCaseInfo()
@@ -63,19 +69,33 @@ namespace UI
             if (caseData == null)
                 return;
 
-            letterTitleTMP.text = caseData.title;
-            letterBodyTMP.text = caseData.description;
+            if (letterTitleTMP != null)
+                letterTitleTMP.text = caseData.title;
 
-            var prefab = caseData.artWorkPrefab;
-            if (prefab != null)
+            if (letterBodyTMP != null)
+                letterBodyTMP.text = caseData.description;
+
+            if (artworkImage != null)
             {
-                var sr = prefab.GetComponentInChildren<SpriteRenderer>();
-                artworkImage.sprite = sr != null ? sr.sprite : null;
+                var prefab = caseData.artWorkPrefab;
+                if (prefab != null)
+                {
+                    var sr = prefab.GetComponentInChildren<SpriteRenderer>();
+                    artworkImage.sprite = sr != null ? sr.sprite : null;
+                }
+                else
+                {
+                    artworkImage.sprite = null;
+                }
             }
 
             bool result = CaseManager.Instance.GetCaseResult(_uiCaseIndex);
-            resultTMP.text = result ? "Correcto" : "Incorrecto";
-            resultTMP.color = result ? Color.green : Color.red;
+
+            if (resultTMP != null)
+            {
+                resultTMP.text = result ? "Correcto" : "Incorrecto";
+                resultTMP.color = result ? Color.green : Color.red;
+            }
         }
 
         public void NextCase()
@@ -100,13 +120,16 @@ namespace UI
 
         private void UpdateNavigationButtons()
         {
-            previousCaseButton.interactable = _uiCaseIndex > 0;
-            nextCaseButton.interactable = _uiCaseIndex < CaseManager.Instance.GetCaseCount() - 1;
+            if (previousCaseButton != null)
+                previousCaseButton.interactable = _uiCaseIndex > 0;
+
+            if (nextCaseButton != null)
+                nextCaseButton.interactable = _uiCaseIndex < CaseManager.Instance.GetCaseCount() - 1;
         }
 
-        private void OnDisable()
+        public void CloseBook()
         {
-            _playerStatus.UnsubscribeToOnStatusUpdated(UpdateStatusTMP);
+            gameObject.SetActive(false);
         }
     }
 }
