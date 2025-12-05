@@ -24,14 +24,22 @@ public class StampItem : ItemBase
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 position2D = new Vector2(worldPos.x, worldPos.y);
 
-        Collider2D hit = Physics2D.OverlapPoint(position2D);
+        Collider2D[] hits = Physics2D.OverlapPointAll(position2D);
 
-        if (hit != null && hit.TryGetComponent(out StampZone zone))
+        StampZone foundZone = null;
+
+        foreach (var h in hits)
         {
-            if (zone.IsOverZone(position2D))
+            if (h.TryGetComponent(out StampZone zone))
             {
-                zone.ApplyStamp(isApproveStamp);
+                foundZone = zone;
+                break;
             }
+        }
+
+        if (foundZone != null && foundZone.IsOverZone(position2D))
+        {
+            foundZone.ApplyStamp(isApproveStamp);
         }
     }
 

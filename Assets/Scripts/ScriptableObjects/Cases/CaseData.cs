@@ -1,5 +1,6 @@
 using ArtWorks;
 using UnityEngine;
+using ScriptableObjects.GameAttributes;
 
 [CreateAssetMenu(fileName = "CaseData", menuName = "TheExpertsEye/CaseData")]
 public class CaseData : ScriptableObject
@@ -10,17 +11,13 @@ public class CaseData : ScriptableObject
     [TextArea(3, 6)]
     public string description;
 
-    [Tooltip("Prefab de la obra asociada a este caso")]
     public GameObject artWorkPrefab;
 
-    [Tooltip("Verdadero = obra genuina")]
     public bool isGenuine = true;
 
-    [Tooltip("Hotspots asociados a este caso (se instancian en la obra).")]
     public Hotspot[] hotspots;
 
-    [Tooltip("Recompensa economica si autentificas correctamente (o penalizacion).")]
-    public int rewardIfCorrect = 100;
-
-    public int penaltyIfWrong = 50;
+    [Header("Consecuencias")]
+    public GameAttributesDataSo acceptConsequences;
+    public GameAttributesDataSo rejectConsequences;
 }

@@ -44,6 +44,6 @@ MonoBehaviour:
     torquent per conubia nostra inceptos himenaeos."
   artWorkPrefab: {fileID: 2719531461719534455, guid: a785b30483845c540b851b9437a8270a, type: 3}
   isGenuine: 0
-  clues: []
-  rewardIfCorrect: 100
-  penaltyIfWrong: 50
+  hotspots: []
+  acceptConsequences: {fileID: 11400000, guid: 5d1ab3d4f17f56441b6d9c7b2724077d, type: 2}
+  rejectConsequences: {fileID: 11400000, guid: 8625dc87a1b67454591ef069e9bcf82e, type: 2}

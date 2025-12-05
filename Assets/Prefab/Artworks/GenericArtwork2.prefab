@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AcceptAttributes>k__BackingField: {fileID: 11400000, guid: 5d1ab3d4f17f56441b6d9c7b2724077d, type: 2}
   <RejectAttributes>k__BackingField: {fileID: 11400000, guid: 8625dc87a1b67454591ef069e9bcf82e, type: 2}
+  spriteRenderer: {fileID: 5448997636552688153}
 --- !u!61 &8488504623554299089
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,7 +187,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: e4fee62ca9664b545b8a9943ea9f6dc8, type: 3}
+  m_Sprite: {fileID: -6369879539158651996, guid: f29b6c821a753d24ca67b809ea1aff39, type: 3}
   m_Color: {r: 0.8679245, g: 0.26610893, b: 0.26610893, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -32,19 +32,8 @@ public class CaseManager : MonoBehaviour
 
     private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
     {
-        CaseData caseData = GetCurrentCase();
-
-        bool isCorrect = (caseData.isGenuine == hasPassed);
-
-        if (isCorrect)
-        {
-            Debug.Log($"Caso {caseData.caseID} decidido correctamente.");
-        }
-        else
-        {
-            Debug.Log($"Caso {caseData.caseID} decidido incorrectamente.");
-        }
-
+        var caseData = GetCurrentCase();
+        bool isCorrect = caseData.isGenuine == hasPassed;
         GoToNextCase();
     }
 
@@ -56,12 +45,8 @@ public class CaseManager : MonoBehaviour
     public void GoToNextCase()
     {
         if (!HasMoreCases())
-        {
-            Debug.Log("Día completado. No hay más casos disponibles.");
             return;
-        }
 
         currentCaseIndex++;
-        Debug.Log($"Cambiando al siguiente caso: {dayData.cases[currentCaseIndex].caseID}");
     }
 }

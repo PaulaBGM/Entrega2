@@ -3,8 +3,9 @@ using Items;
 using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Interfaces;
 
-public class CaseLetter : ItemBase
+public class CaseLetter : ItemBase, IInteractable
 {
     public enum LetterState
     {
@@ -15,7 +16,6 @@ public class CaseLetter : ItemBase
     }
 
     public LetterState State { get; private set; } = LetterState.Closed;
-
     public CaseData caseData;
 
     private Transform _originalParent;
@@ -37,9 +37,9 @@ public class CaseLetter : ItemBase
     {
         base.Awake();
         _originalParent = transform.parent;
-
         UpdateSprite();
     }
+
     private void UpdateSprite()
     {
         if (spriteRenderer == null) return;
@@ -118,6 +118,7 @@ public class CaseLetter : ItemBase
                 SendLetter();
         }
     }
+
     private void OpenLetter()
     {
         State = LetterState.Open;
@@ -154,5 +155,14 @@ public class CaseLetter : ItemBase
             pile.RemoveTopLetter(this);
 
         Destroy(gameObject);
+    }
+
+    public override void Interact()
+    {
+        if (!_canInteract) return;
+        if (State == LetterState.Sent) return;
+
+        if (State == LetterState.Open)
+            OpenLetter();
     }
 }

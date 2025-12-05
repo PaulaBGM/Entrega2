@@ -40,19 +40,11 @@ public class LetterUIController : MonoBehaviour
 
     public void ShowLetter_WithCallback(string formattedTitle, string formattedDescription, System.Action onClosed)
     {
-        if (letterPanel == null || titleText == null || descriptionText == null) return;
-
         _onCloseCallback = onClosed;
-
         titleText.text = formattedTitle;
 
         GeneratePages(formattedDescription);
         _currentPage = 0;
-
-        if (_pages.Count == 0)
-        {
-            _pages.Add(string.Empty);
-        }
 
         ShowPage(0);
         letterPanel.SetActive(true);
@@ -65,11 +57,6 @@ public class LetterUIController : MonoBehaviour
         _pages.Clear();
 
         int maxChars = 350;
-        if (string.IsNullOrEmpty(fullText))
-        {
-            _pages.Add(string.Empty);
-            return;
-        }
 
         for (int i = 0; i < fullText.Length; i += maxChars)
         {
@@ -80,7 +67,8 @@ public class LetterUIController : MonoBehaviour
 
     private void ShowPage(int index)
     {
-        if (index < 0 || index >= _pages.Count) return;
+        if (index < 0 || index >= _pages.Count)
+            return;
 
         _currentPage = index;
         descriptionText.text = _pages[index];
