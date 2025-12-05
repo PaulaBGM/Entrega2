@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: bc3bcde042c554642919c3584446f787
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -737537787548747983
+    second: FontenelleSignValid_0
+  - first:
+      213: -1439643552864841117
+    second: FontenelleSignValid_1
+  - first:
+      213: -4038472373663645447
+    second: FontenelleSignValid_2
+  - first:
+      213: -8195713283298560413
+    second: FontenelleSignValid_3
+  - first:
+      213: 7463166702949718885
+    second: FontenelleSignValid_4
+  - first:
+      213: -8674313718765741408
+    second: FontenelleSignValid_5
+  - first:
+      213: 8572392235042760224
+    second: FontenelleSignValid_6
+  - first:
+      213: -2349245258865172525
+    second: FontenelleSignValid_7
+  - first:
+      213: 4425363546418467298
+    second: FontenelleSignValid_8
+  - first:
+      213: -624059721721013679
+    second: FontenelleSignValid_9
+  - first:
+      213: 7165264195283247748
+    second: FontenelleSignValid_10
+  - first:
+      213: 2063053162254660841
+    second: FontenelleSignValid_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FontenelleSignValid_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 146
+        width: 141
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137bab43a4db3c5f0800000000000000
+      internalID: -737537787548747983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 181
+        width: 112
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3625f44f0db550ce0800000000000000
+      internalID: -1439643552864841117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 201
+        width: 50
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0cc8cd5c674f7c0800000000000000
+      internalID: -4038472373663645447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_3
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 205
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366f90c013af24e80800000000000000
+      internalID: -8195713283298560413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_4
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 242
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b57d4239e729760800000000000000
+      internalID: 7463166702949718885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 202
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa9baa91a5ae9780800000000000000
+      internalID: -8674313718765741408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_6
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 207
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0266a0db15147f670800000000000000
+      internalID: 8572392235042760224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_7
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 245
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df121742edc56fd0800000000000000
+      internalID: -2349245258865172525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_8
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 190
+        width: 91
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e15c3ae2bc0a6d30800000000000000
+      internalID: 4425363546418467298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_9
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 235
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a90305df4e657f0800000000000000
+      internalID: -624059721721013679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 197
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482eea982d1207360800000000000000
+      internalID: 7165264195283247748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FontenelleSignValid_11
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 198
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e47fe8abef61ac10800000000000000
+      internalID: 2063053162254660841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FontenelleSignValid_0: -737537787548747983
+      FontenelleSignValid_1: -1439643552864841117
+      FontenelleSignValid_10: 7165264195283247748
+      FontenelleSignValid_11: 2063053162254660841
+      FontenelleSignValid_2: -4038472373663645447
+      FontenelleSignValid_3: -8195713283298560413
+      FontenelleSignValid_4: 7463166702949718885
+      FontenelleSignValid_5: -8674313718765741408
+      FontenelleSignValid_6: 8572392235042760224
+      FontenelleSignValid_7: -2349245258865172525
+      FontenelleSignValid_8: 4425363546418467298
+      FontenelleSignValid_9: -624059721721013679
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
