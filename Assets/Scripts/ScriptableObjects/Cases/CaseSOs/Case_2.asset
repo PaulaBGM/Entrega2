@@ -15,8 +15,8 @@ MonoBehaviour:
   caseID: Case_2
   title: caso 2
   description: caso 2
-  artWorkPrefab: {fileID: 0}
+  artWorkPrefab: {fileID: 2719531461719534455, guid: f470b147cad96a846ac63472e3716ccf, type: 3}
   isGenuine: 1
-  clues: []
-  rewardIfCorrect: 100
-  penaltyIfWrong: 50
+  hotspots: []
+  acceptConsequences: {fileID: 0}
+  rejectConsequences: {fileID: 0}

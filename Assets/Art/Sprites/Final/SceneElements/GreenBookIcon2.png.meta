@@ -54,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreenBookIcon2_0
+      name: GreenBookIcon_Etic
       rect:
         serializedVersion: 2
-        x: 73
-        y: 68
-        width: 130
-        height: 123
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,13 +154,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreenBookIcon2_1
+      name: GreenBookIcon_Reput
       rect:
         serializedVersion: 2
-        x: 326
-        y: 69
-        width: 90
-        height: 84
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,33 +175,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: GreenBookIcon2_2
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 122
-        width: 45
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0a7cd27cfd3ce740800000000000000
-      internalID: 5182585425664702991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e084bff049f691b4fbd3b96ca9f28dac
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +189,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GreenBookIcon2_0: 8690737405966075756
-      GreenBookIcon2_1: -2093012089140613725
-      GreenBookIcon2_2: 5182585425664702991
+      GreenBookIcon_Etic: 8690737405966075756
+      GreenBookIcon_Reput: -2093012089140613725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

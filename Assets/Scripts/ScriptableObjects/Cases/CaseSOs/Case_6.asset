@@ -15,9 +15,8 @@ MonoBehaviour:
   caseID: 
   title: 
   description: 
-  artworkSprite: {fileID: 0}
+  artWorkPrefab: {fileID: 2719531461719534455, guid: f7b0359795039404d9e8da3a40feec50, type: 3}
   isGenuine: 1
-  difficulty: 0.2
-  clues: []
-  rewardIfCorrect: 100
-  penaltyIfWrong: 50
+  hotspots: []
+  acceptConsequences: {fileID: 0}
+  rejectConsequences: {fileID: 0}
