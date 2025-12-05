@@ -8,10 +8,16 @@ public class CaseManager : MonoBehaviour
     public CaseDayData dayData;
 
     private int currentCaseIndex = 0;
+    private bool[] caseResults;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        caseResults = new bool[dayData.cases.Count];
     }
 
     private void OnEnable()
@@ -30,10 +36,39 @@ public class CaseManager : MonoBehaviour
         return dayData.cases[currentCaseIndex];
     }
 
+    public int GetCurrentCaseIndex()
+    {
+        return currentCaseIndex;
+    }
+
+    public CaseData GetCaseAt(int index)
+    {
+        if (index < 0 || index >= dayData.cases.Count)
+            return null;
+
+        return dayData.cases[index];
+    }
+
+    public int GetCaseCount()
+    {
+        return dayData.cases.Count;
+    }
+
+    public bool GetCaseResult(int index)
+    {
+        if (index < 0 || index >= caseResults.Length)
+            return false;
+
+        return caseResults[index];
+    }
+
     private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
     {
         var caseData = GetCurrentCase();
         bool isCorrect = caseData.isGenuine == hasPassed;
+
+        caseResults[currentCaseIndex] = isCorrect;
+
         GoToNextCase();
     }
 
