@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f22b6c662031ea43ab784cd01ca0055, type: 3}
+  m_Name: Page 2
+  m_EditorClassIdentifier: 
+  bodyText: "Este manual recoge los procedimientos b\xE1sicos para verificar la autenticidad
+    de pinturas y documentos hist\xF3ricos que llegan al INAC.\n\nEl t\xE9cnico pericial
+    deber\xE1:\n\n- Examinar la obra con lupa y luz UV.\n- Comparar la informaci\xF3n
+    t\xE9cnica con este manual.\n- Detectar incongruencias hist\xF3ricas, materiales
+    o estil\xEDsticas.\n\nEmitir un dictamen:\n\n- AUTENTIFICAR / VALIDAR (la obra
+    cumple los criterios).\n\n- RETENER / NO VALIDAR (la obra presenta dudas o se\xF1ales
+    de falsificaci\xF3n).\n\nTodas las decisiones afectan a las variables internas
+    del Instituto: Fondos, \xC9tica, Reputaci\xF3n.\n\nEste manual est\xE1 pensado
+    para uso interno del INAC y no puede salir del laboratorio, est\xE1 ligado a
+    su trabajo, por lo que a partir de ahora pasa a ser de su propiedad."
+  images: []
