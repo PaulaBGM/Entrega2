@@ -9,7 +9,7 @@ namespace UI
     public class CaseBookUI : MonoBehaviour
     {
         private PlayerStatus _playerStatus;
-        
+
         [SerializeField] private TMP_Text fundsTMP;
         [SerializeField] private TMP_Text ethicTMP;
         [SerializeField] private TMP_Text reputationTMP;
@@ -18,9 +18,11 @@ namespace UI
         {
             _playerStatus = GameManager.Instance.PlayerStatus;
             _playerStatus.SubscribeToOnStatusUpdated(UpdateStatusTMP);
+
+            RefreshStatus(); // se actualiza nada más activarse
         }
 
-        private void Start()
+        public void RefreshStatus()
         {
             var (reputation, ethic, funds) = _playerStatus.GetInitialStatus();
             UpdateStatusTMP((reputation, ethic, funds));
@@ -32,7 +34,7 @@ namespace UI
             ethicTMP.text = $"{statusData.ethic}%";
             reputationTMP.text = $"{statusData.reputation}%";
         }
-        
+
         private void OnDisable()
         {
             _playerStatus.UnsubscribeToOnStatusUpdated(UpdateStatusTMP);
