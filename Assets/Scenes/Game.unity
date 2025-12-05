@@ -3341,6 +3341,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 370470327}
     m_Modifications:
     - target: {fileID: 4725995701087655751, guid: 9d54c3f92c3020b468ffa8912189cf3b, type: 3}
+      propertyPath: stampZone
+      value: 
+      objectReference: {fileID: 6545845469460221681}
+    - target: {fileID: 4725995701087655751, guid: 9d54c3f92c3020b468ffa8912189cf3b, type: 3}
       propertyPath: titleText
       value: 
       objectReference: {fileID: 730099904}
@@ -3702,6 +3706,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
+--- !u!114 &6545845469460221681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7077276500456356231, guid: f8cf5dd19f5658e4996d4879a8fc6d62, type: 3}
+  m_PrefabInstance: {fileID: 6545845469460221680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762f8ad1c35f8cf44becd027988b05f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8097547711601696108
 PrefabInstance:
   m_ObjectHideFlags: 0

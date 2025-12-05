@@ -1,17 +1,15 @@
-using Interfaces;
-using Managers;
 using UnityEngine;
 using UnityEngine.UI;
+using Managers;
 
-public class StampZone : MonoBehaviour, IInteractable
+public class StampZone : MonoBehaviour
 {
     [SerializeField] private Image stampPreview;
     [SerializeField] private Sprite approveSprite;
     [SerializeField] private Sprite rejectSprite;
 
-    private bool _stampApplied;
-
     private Collider2D _collider;
+    private bool _stampApplied;
 
     private void Awake()
     {
@@ -20,37 +18,32 @@ public class StampZone : MonoBehaviour, IInteractable
 
     public bool IsOverZone(Vector2 position)
     {
-        return _collider.OverlapPoint(position);
+        return _collider != null && _collider.enabled && _collider.OverlapPoint(position);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void ApplyStamp(bool isApproved)
     {
         if (_stampApplied)
             return;
 
-        if (other.TryGetComponent<StampItem>(out var stamp))
-        {
-            // Solo estampa si el sello está siendo sujetado
-            if (stamp.IsHeld)
-            {
-                ApplyStamp(stamp.IsApproveStamp);
-            }
-        }
-    }
-    public void Interact() { }
-    private void ApplyStamp(bool approved)
-    {
         _stampApplied = true;
 
-        stampPreview.sprite = approved ? approveSprite : rejectSprite;
+        stampPreview.sprite = isApproved ? approveSprite : rejectSprite;
         stampPreview.enabled = true;
 
-        GameManager.Instance.ArtworkEvaluated(approved);
+        GameManager.Instance.ArtworkEvaluated(isApproved);
+    }
+
+    public void EnableZone(bool enabled)
+    {
+        if (_collider != null)
+            _collider.enabled = enabled;
     }
 
     public void ResetStamp()
     {
         _stampApplied = false;
-        stampPreview.enabled = false;
+        if (stampPreview != null)
+            stampPreview.enabled = false;
     }
 }

@@ -14,6 +14,9 @@ public class LetterUIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button closeButton;
 
+    [Header("Stamp Zone")]
+    [SerializeField] private StampZone stampZone;
+
     private System.Action _onCloseCallback;
     private List<string> _pages = new List<string>();
     private int _currentPage = 0;
@@ -51,9 +54,10 @@ public class LetterUIController : MonoBehaviour
             _pages.Add(string.Empty);
         }
 
-        Debug.Log($"ShowLetter: páginas {_pages.Count}");
         ShowPage(0);
         letterPanel.SetActive(true);
+
+        UpdateStampZoneState();
     }
 
     private void GeneratePages(string fullText)
@@ -80,12 +84,21 @@ public class LetterUIController : MonoBehaviour
 
         _currentPage = index;
         descriptionText.text = _pages[index];
-        Debug.Log($"Mostrando página {_currentPage + 1} / {_pages.Count}");
+
+        UpdateStampZoneState();
+    }
+
+    private void UpdateStampZoneState()
+    {
+        if (stampZone == null)
+            return;
+
+        bool isLastPage = _currentPage == _pages.Count - 1;
+        stampZone.EnableZone(isLastPage);
     }
 
     public void OnCloseButtonPressed()
     {
-        Debug.Log("CloseButton pressed");
         if (_currentPage < _pages.Count - 1)
         {
             _currentPage++;
@@ -104,5 +117,7 @@ public class LetterUIController : MonoBehaviour
         _onCloseCallback = null;
         _pages.Clear();
         _currentPage = 0;
+
+        UpdateStampZoneState();
     }
 }
