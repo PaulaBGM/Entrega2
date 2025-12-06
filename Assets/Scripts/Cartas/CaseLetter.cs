@@ -18,8 +18,8 @@ public class CaseLetter : ItemBase, IInteractable
     public LetterState State { get; private set; } = LetterState.Closed;
     public CaseData caseData;
 
-    private Transform _originalParent;
-    private bool _canInteract = true;
+    private Transform originalParent;
+    private bool canInteract = true;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -36,7 +36,7 @@ public class CaseLetter : ItemBase, IInteractable
     protected override void Awake()
     {
         base.Awake();
-        _originalParent = transform.parent;
+        originalParent = transform.parent;
         UpdateSprite();
     }
 
@@ -69,15 +69,14 @@ public class CaseLetter : ItemBase, IInteractable
 
     public override void Select()
     {
-        if (!_canInteract) return;
+        if (!canInteract) return;
         if (State == LetterState.Sent) return;
-
         Collect();
     }
 
     public override void Deselect()
     {
-        if (!_canInteract) return;
+        if (!canInteract) return;
         if (State == LetterState.Sent) return;
 
         Uncollect();
@@ -120,12 +119,8 @@ public class CaseLetter : ItemBase, IInteractable
         State = LetterState.Open;
         UpdateSprite();
 
-        string title = string.IsNullOrWhiteSpace(caseData.title) ? "SIN TÍTULO" : caseData.title.Trim();
-        string desc = string.IsNullOrWhiteSpace(caseData.description) ? "SIN DESCRIPCIÓN" : caseData.description.Trim();
-
-        LetterUIController.Instance.ShowLetter_WithCallback(
-            title,
-            desc,
+        DocumentUIController.Instance.ShowDocuments(
+            caseData,
             () =>
             {
                 ArtworkSpawner.Instance.SpawnArtworkForCurrentCase(caseData);
@@ -135,12 +130,8 @@ public class CaseLetter : ItemBase, IInteractable
 
     private void ReopenLetter()
     {
-        string title = string.IsNullOrWhiteSpace(caseData.title) ? "SIN TÍTULO" : caseData.title.Trim();
-        string desc = string.IsNullOrWhiteSpace(caseData.description) ? "SIN DESCRIPCIÓN" : caseData.description.Trim();
-
-        LetterUIController.Instance.ShowLetter_WithCallback(
-            title,
-            desc,
+        DocumentUIController.Instance.ShowDocuments(
+            caseData,
             null
         );
     }
@@ -172,14 +163,15 @@ public class CaseLetter : ItemBase, IInteractable
 
         Destroy(gameObject);
     }
+
     public void SetInteractable(bool value)
     {
-        _canInteract = value;
+        canInteract = value;
     }
 
     public override void Interact()
     {
-        if (!_canInteract) return;
+        if (!canInteract) return;
         if (State == LetterState.Sent) return;
 
         if (State == LetterState.Open || State == LetterState.Sealed)
