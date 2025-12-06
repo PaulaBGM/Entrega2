@@ -1,5 +1,5 @@
-using ArtWorks;
 using UnityEngine;
+using ArtWorks;
 using ScriptableObjects.GameAttributes;
 
 [CreateAssetMenu(fileName = "CaseData", menuName = "TheExpertsEye/CaseData")]
@@ -7,17 +7,13 @@ public class CaseData : ScriptableObject
 {
     public string caseID;
     public string title;
-
-    [TextArea(3, 6)]
-    public string description;
-
+    [TextArea(3, 6)] public string description;
     public GameObject artWorkPrefab;
-
     public bool isGenuine = true;
-
     public Hotspot[] hotspots;
 
-    [Header("Consecuencias")]
+    public DocumentData[] documents;
+
     public GameAttributesDataSo acceptConsequences;
     public GameAttributesDataSo rejectConsequences;
 }

@@ -1,5 +1,6 @@
 using Managers;
 using UnityEngine;
+using ArtWorks;
 
 public class CaseManager : MonoBehaviour
 {
@@ -62,7 +63,18 @@ public class CaseManager : MonoBehaviour
         return caseResults[index];
     }
 
-    private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
+    public void StartCase()
+    {
+        var caseData = GetCurrentCase();
+        DocumentUIController.Instance.ShowDocuments(caseData, OnDocumentsClosed);
+    }
+
+    private void OnDocumentsClosed()
+    {
+        ArtworkSpawner.Instance.SpawnArtworkForCurrentCase(GetCurrentCase());
+    }
+
+    private void OnArtworkEvaluated(ArtWork artwork, bool hasPassed)
     {
         var caseData = GetCurrentCase();
         bool isCorrect = caseData.isGenuine == hasPassed;
@@ -83,5 +95,6 @@ public class CaseManager : MonoBehaviour
             return;
 
         currentCaseIndex++;
+        StartCase();
     }
 }
