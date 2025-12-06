@@ -17,6 +17,10 @@ namespace ArtWorks
         private bool _isSelectable = true;
         
         [SerializeField] private Hotspot[] _hotspots;
+        
+        [Header("LENS SPECIFIC")]
+        [field: SerializeField] public Transform SmallSheet {get; private set;}
+        [field: SerializeField] public Transform BigSheet {get; private set;}
 
         private SmoothTransform _smoothTransform;
         private Collider2D _collider;
@@ -33,6 +37,9 @@ namespace ArtWorks
 
             if (spriteRenderer == null)
                 spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            
+            if (SmallSheet == null || BigSheet == null)
+                Debug.LogError("[ArtWork] ERROR: SmallSheet o BigSheet no están asignados en el inspector.");
         }
 
         public void SetupFromCase(CaseData data)

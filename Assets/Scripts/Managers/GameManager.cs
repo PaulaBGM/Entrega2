@@ -12,10 +12,11 @@ namespace Managers
 
         private Action<ArtWork, bool> _onArtworkEvaluated;
         private ArtWork _currentArtwork;
-        public ArtWork CurrentArtwork => _currentArtwork;
 
         [field: SerializeField] public PlayerStatus PlayerStatus { get; private set; }
 
+        public Action<ArtWork> OnArtworkAssigned;
+        
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -31,6 +32,8 @@ namespace Managers
         {
             _currentArtwork = artWork;
             Debug.Log("[GameManager] SetCurrentArtWork: " + artWork);
+            
+            OnArtworkAssigned?.Invoke(artWork);
         }
 
         public ArtWork GetCurrentArtWork() => _currentArtwork;

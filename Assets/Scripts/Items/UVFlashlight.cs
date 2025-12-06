@@ -25,7 +25,14 @@ namespace Items
         public override void Collect()
         {
             base.Collect();
-            GameManager.Instance.GetCurrentArtWork()?.UpdateHotspots(Hotspot.HotspotsType.UV);   
+            
+            if (GameManager.Instance.GetCurrentArtWork() is null)
+                return;
+            
+            GameManager.Instance.GetCurrentArtWork()?.UpdateHotspots(Hotspot.HotspotsType.UV);
+            GameManager.Instance.GetCurrentArtWork().BigSheet.gameObject.SetActive(false);
+            GameManager.Instance.GetCurrentArtWork().SmallSheet.GetComponent<SpriteRenderer>().
+                maskInteraction = SpriteMaskInteraction.None;
         }
 
         public override void Uncollect()

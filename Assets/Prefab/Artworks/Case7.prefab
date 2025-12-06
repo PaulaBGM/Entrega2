@@ -409,6 +409,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AcceptAttributes>k__BackingField: {fileID: 11400000, guid: 3ad2d555704731d4bb23b1a848073dd6, type: 2}
   <RejectAttributes>k__BackingField: {fileID: 11400000, guid: 282689204b40f2c40a37237b0690c1c7, type: 2}
+  _hotspots: []
+  <SmallSheet>k__BackingField: {fileID: 2367807122636712986}
+  <BigSheet>k__BackingField: {fileID: 234723123070735902}
   spriteRenderer: {fileID: 5448997636552688153}
 --- !u!61 &8488504623554299089
 BoxCollider2D:

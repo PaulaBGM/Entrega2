@@ -90,6 +90,8 @@ MonoBehaviour:
   - {fileID: 751689969195443787}
   - {fileID: 2437005086130101719}
   - {fileID: 589952246205244632}
+  <SmallSheet>k__BackingField: {fileID: 2367807122636712986}
+  <BigSheet>k__BackingField: {fileID: 2860452270468405565}
   spriteRenderer: {fileID: 5448997636552688153}
 --- !u!61 &8488504623554299089
 BoxCollider2D:
