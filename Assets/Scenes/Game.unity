@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030808614464326113, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3247651178060156237, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
       propertyPath: m_Name
       value: MagnifyingGlass
@@ -3816,6 +3820,14 @@ PrefabInstance:
     - target: {fileID: 3156625753585528083, guid: d8d299925d932b64c801e11475896295, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899310881546607272, guid: d8d299925d932b64c801e11475896295, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899310881546607272, guid: d8d299925d932b64c801e11475896295, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
