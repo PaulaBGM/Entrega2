@@ -44,6 +44,8 @@ namespace ArtWorks
                 _artWorkSpawned.SetupFromCase(caseData);
                 _artWorkSpawned.StartSpawnBehavior(objectivePoint.position);
             }
+            
+            GameManager.Instance?.SetCurrentArtWork(_artWorkSpawned);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Managers
 
         private Action<ArtWork, bool> _onArtworkEvaluated;
         private ArtWork _currentArtwork;
+        public ArtWork CurrentArtwork => _currentArtwork;
 
         [field: SerializeField] public PlayerStatus PlayerStatus { get; private set; }
 

@@ -1,3 +1,5 @@
+using ArtWorks;
+using Managers;
 using UnityEngine;
 
 namespace Items
@@ -18,6 +20,12 @@ namespace Items
         {
             _uvLightOn = !_uvLightOn;
             uvSpriteMask.SetActive(_uvLightOn);
+        }
+
+        public override void Collect()
+        {
+            base.Collect();
+            GameManager.Instance.GetCurrentArtWork()?.UpdateHotspots(Hotspot.HotspotsType.UV);   
         }
 
         public override void Uncollect()

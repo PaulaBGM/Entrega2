@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Interfaces;
 using ScriptableObjects.GameAttributes;
@@ -14,6 +15,8 @@ namespace ArtWorks
 
         private bool _isCollected;
         private bool _isSelectable = true;
+        
+        [SerializeField] private Hotspot[] _hotspots;
 
         private SmoothTransform _smoothTransform;
         private Collider2D _collider;
@@ -39,6 +42,17 @@ namespace ArtWorks
 
             AcceptAttributes = data.acceptConsequences;
             RejectAttributes = data.rejectConsequences;
+        }
+
+        public void UpdateHotspots(Hotspot.HotspotsType hotspotsType)
+        {
+            foreach (var hotspot in _hotspots)
+            {
+                if (hotspot.HotspotType == hotspotsType)
+                    hotspot.gameObject.SetActive(true);
+                else
+                    hotspot.gameObject.SetActive(false);
+            }
         }
 
         public void Collect()

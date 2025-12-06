@@ -1,18 +1,24 @@
-using System;
-using TMPro;
 using UnityEngine;
 
-public class Hotspot : MonoBehaviour
+namespace ArtWorks
 {
-    [SerializeField] private RenderingLayerMask revealLayer;
-
-    [Header("Other components")]
-    private SpriteRenderer _spriteRenderer;
-    
-    private void Awake()
+    public class Hotspot : MonoBehaviour
     {
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        
-        _spriteRenderer.renderingLayerMask = revealLayer;
+        public enum HotspotsType
+        {
+            UV,
+            Zoom
+        }
+    
+        [SerializeField] private HotspotsType hotspotsType;
+        public HotspotsType HotspotType => hotspotsType;
+
+        [Header("Other components")]
+        private SpriteRenderer _spriteRenderer;
+    
+        private void Awake()
+        {
+            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
     }
 }
