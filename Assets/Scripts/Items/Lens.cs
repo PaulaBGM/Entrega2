@@ -1,40 +1,48 @@
 using UnityEngine;
-using ArtWorks;
 
 public class Lens : MonoBehaviour
 {
-    private SpriteRenderer smallSheet;
-    private SpriteRenderer bigSheet;
+    [SerializeField] private Transform smallSheet;
+    [SerializeField] private Transform bigSheet;
 
-    private void Start()
+    private bool triedFindingSmall = false;
+    private bool triedFindingBig = false;
+
+    void Update()
     {
-        ArtWork art = ArtworkSpawner.Instance.GetCurrentArtwork();
-        if (art == null) return;
+        // Buscar smallSheet si aún no está asignado
+        if (smallSheet == null && !triedFindingSmall)
+        {
+            var obj = GameObject.FindWithTag("SmallSheet");
+            if (obj != null)
+            {
+                smallSheet = obj.transform;
+            }
+            else
+            {
+                triedFindingSmall = true; // evitar buscar cada frame hasta que reaparezca
+            }
+        }
 
-        SpriteRenderer artRenderer = art.GetComponentInChildren<SpriteRenderer>();
-        if (artRenderer == null) return;
+        // Buscar bigSheet si aún no está asignado
+        if (bigSheet == null && !triedFindingBig)
+        {
+            var obj = GameObject.FindWithTag("BigSheet");
+            if (obj != null)
+            {
+                bigSheet = obj.transform;
+            }
+            else
+            {
+                triedFindingBig = true;
+            }
+        }
 
-        GameObject smallObj = new GameObject("SmallSheet");
-        smallObj.transform.SetParent(transform);
-        smallObj.transform.position = artRenderer.transform.position;
+        // Si no están listos, no hacemos cálculo ni error
+        if (smallSheet == null || bigSheet == null)
+            return;
 
-        smallSheet = smallObj.AddComponent<SpriteRenderer>();
-        smallSheet.sprite = artRenderer.sprite;
-
-        GameObject bigObj = new GameObject("BigSheet");
-        bigObj.transform.SetParent(transform);
-        bigObj.transform.position = smallObj.transform.position;
-        bigObj.transform.localScale = Vector3.one * 2f;
-
-        bigSheet = bigObj.AddComponent<SpriteRenderer>();
-        bigSheet.sprite = artRenderer.sprite;
-    }
-
-    private void Update()
-    {
-        if (smallSheet == null || bigSheet == null) return;
-
-        bigSheet.transform.position =
-            smallSheet.transform.position * 2f - transform.position;
+        // Cálculo principal cuando ya existen los dos transforms
+        bigSheet.position = smallSheet.position * 2 - transform.position;
     }
 }
