@@ -1471,7 +1471,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 9212749822336151266, guid: e1df2f5a5fbed884186874d1725e55c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1865,11 +1865,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 860577152}
   - {fileID: 168213659}
   - {fileID: 675860456}
   - {fileID: 1616948935}
   - {fileID: 1052802895}
+  - {fileID: 860577152}
   m_Father: {fileID: 1403804541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1105094542
