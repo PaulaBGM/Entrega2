@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterPanel: {fileID: 0}
-  letterText: {fileID: 0}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
   closeButton: {fileID: 0}
-  TitleFont: {fileID: 11400000, guid: 1c80b0703f6c384449328a2dea86c163, type: 2}
-  DescriptionFont: {fileID: 11400000, guid: e6a7f7eda0bf9c04689e33694e5dd453, type: 2}
+  stampZone: {fileID: 0}
+  letterPanelImage: {fileID: 0}
+  normalSprite: {fileID: 8031679433600898884, guid: 04e3a8b437735a448a94eff46345a999, type: 3}
+  lastPageSprite: {fileID: 1153909208503660907, guid: fdf22e18a6ec0ba4caa601b3cf825764, type: 3}

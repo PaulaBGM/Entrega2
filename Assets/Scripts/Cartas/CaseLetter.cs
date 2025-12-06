@@ -54,6 +54,7 @@ public class CaseLetter : ItemBase, IInteractable
             case LetterState.Open:
                 spriteRenderer.sprite = openSprite;
                 spriteRenderer.transform.localScale = openScale;
+                spriteRenderer.sortingOrder = 0;
                 break;
 
             case LetterState.Sealed:
@@ -64,11 +65,6 @@ public class CaseLetter : ItemBase, IInteractable
             case LetterState.Sent:
                 break;
         }
-    }
-
-    public void SetInteractable(bool value)
-    {
-        _canInteract = value;
     }
 
     public override void Select()
@@ -137,6 +133,18 @@ public class CaseLetter : ItemBase, IInteractable
         );
     }
 
+    private void ReopenLetter()
+    {
+        string title = string.IsNullOrWhiteSpace(caseData.title) ? "SIN TÍTULO" : caseData.title.Trim();
+        string desc = string.IsNullOrWhiteSpace(caseData.description) ? "SIN DESCRIPCIÓN" : caseData.description.Trim();
+
+        LetterUIController.Instance.ShowLetter_WithCallback(
+            title,
+            desc,
+            null
+        );
+    }
+
     public void SealLetter()
     {
         if (State != LetterState.Open)
@@ -144,17 +152,29 @@ public class CaseLetter : ItemBase, IInteractable
 
         State = LetterState.Sealed;
         UpdateSprite();
+
+        var currentArtwork = ArtworkSpawner.Instance.GetCurrentArtwork();
+
+        if (currentArtwork != null && currentArtwork.CaseData == caseData)
+        {
+            Destroy(currentArtwork.gameObject);
+            ArtworkSpawner.Instance.ClearCurrentArtwork();
+        }
     }
 
     private void SendLetter()
     {
         State = LetterState.Sent;
 
-        CaseLetterPile pile = FindFirstObjectByType<CaseLetterPile>();
+        var pile = FindFirstObjectByType<CaseLetterPile>();
         if (pile != null)
             pile.RemoveTopLetter(this);
 
         Destroy(gameObject);
+    }
+    public void SetInteractable(bool value)
+    {
+        _canInteract = value;
     }
 
     public override void Interact()
@@ -162,7 +182,7 @@ public class CaseLetter : ItemBase, IInteractable
         if (!_canInteract) return;
         if (State == LetterState.Sent) return;
 
-        if (State == LetterState.Open)
-            OpenLetter();
+        if (State == LetterState.Open || State == LetterState.Sealed)
+            ReopenLetter();
     }
 }

@@ -17,6 +17,11 @@ public class LetterUIController : MonoBehaviour
     [Header("Stamp Zone")]
     [SerializeField] private StampZone stampZone;
 
+    [Header("Panel Background Sprites")]
+    [SerializeField] private Image letterPanelImage;
+    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite lastPageSprite;
+
     private System.Action _onCloseCallback;
     private List<string> _pages = new List<string>();
     private int _currentPage = 0;
@@ -41,21 +46,20 @@ public class LetterUIController : MonoBehaviour
     public void ShowLetter_WithCallback(string formattedTitle, string formattedDescription, System.Action onClosed)
     {
         _onCloseCallback = onClosed;
+
         titleText.text = formattedTitle;
-
         GeneratePages(formattedDescription);
+
         _currentPage = 0;
-
         ShowPage(0);
-        letterPanel.SetActive(true);
 
+        letterPanel.SetActive(true);
         UpdateStampZoneState();
     }
 
     private void GeneratePages(string fullText)
     {
         _pages.Clear();
-
         int maxChars = 350;
 
         for (int i = 0; i < fullText.Length; i += maxChars)
@@ -78,11 +82,19 @@ public class LetterUIController : MonoBehaviour
 
     private void UpdateStampZoneState()
     {
-        if (stampZone == null)
-            return;
-
         bool isLastPage = _currentPage == _pages.Count - 1;
-        stampZone.EnableZone(isLastPage);
+
+        if (stampZone != null)
+            stampZone.EnableZone(isLastPage);
+
+        UpdatePanelSprite(isLastPage);
+    }
+
+    private void UpdatePanelSprite(bool isLastPage)
+    {
+        if (letterPanelImage == null) return;
+
+        letterPanelImage.sprite = isLastPage ? lastPageSprite : normalSprite;
     }
 
     public void OnCloseButtonPressed()
@@ -103,6 +115,7 @@ public class LetterUIController : MonoBehaviour
         letterPanel.SetActive(false);
         _onCloseCallback?.Invoke();
         _onCloseCallback = null;
+
         _pages.Clear();
         _currentPage = 0;
 

@@ -692,14 +692,6 @@ PrefabInstance:
       propertyPath: smallSheet
       value: 
       objectReference: {fileID: 772049522}
-    - target: {fileID: 3724524452850374047, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934808085724908165, guid: e2891e9d97e131445acc87d591a078ba, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
