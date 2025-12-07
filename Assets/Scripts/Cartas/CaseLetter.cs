@@ -121,15 +121,21 @@ public class CaseLetter : ItemBase, IInteractable
         UpdateSprite();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         DocumentUIController.Instance.ShowDocuments(
             caseData,
 =======
+=======
+>>>>>>> Stashed changes
         string title = string.IsNullOrWhiteSpace(caseData.title) ? "SIN TÍTULO" : caseData.title.Trim();
         string desc = string.IsNullOrWhiteSpace(caseData.description) ? "SIN DESCRIPCIÓN" : caseData.description.Trim();
 
         LetterUIController.Instance.ShowLetter_WithCallback(
             title,
             desc,
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             () =>
             {
@@ -141,15 +147,21 @@ public class CaseLetter : ItemBase, IInteractable
     private void ReopenLetter()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         DocumentUIController.Instance.ShowDocuments(
             caseData,
 =======
+=======
+>>>>>>> Stashed changes
         string title = string.IsNullOrWhiteSpace(caseData.title) ? "SIN TÍTULO" : caseData.title.Trim();
         string desc = string.IsNullOrWhiteSpace(caseData.description) ? "SIN DESCRIPCIÓN" : caseData.description.Trim();
 
         LetterUIController.Instance.ShowLetter_WithCallback(
             title,
             desc,
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             null
         );

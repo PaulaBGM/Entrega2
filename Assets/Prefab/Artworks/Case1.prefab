@@ -257,9 +257,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   revealLayer:
     serializedVersion: 0
     m_Bits: 2
+=======
+  hotspotsType: 0
+>>>>>>> Stashed changes
 =======
   hotspotsType: 0
 >>>>>>> Stashed changes
@@ -472,7 +476,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1fd7fae1bd2581440a2cd8eacf7dd0c1, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 2415966753268474668, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
       propertyPath: m_MaskInteraction
       value: 1
@@ -485,6 +492,7 @@ PrefabInstance:
     - target: {fileID: 3137591514627080336, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.41
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       objectReference: {fileID: 0}
     - target: {fileID: 3137591514627080336, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
@@ -570,6 +578,8 @@ PrefabInstance:
       value: -0.44
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3137591514627080336, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
       propertyPath: m_LocalPosition.z
@@ -608,6 +618,9 @@ PrefabInstance:
       propertyPath: m_Enabled
 =======
       propertyPath: hotspotsType
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       value: 1
       objectReference: {fileID: 0}
@@ -617,7 +630,10 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!114 &2437005086130101719 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9023420484838818124, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
@@ -734,6 +750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7f29b76d37442459da000a7ed4f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!4 &6817528125588268292 stripped
 Transform:
@@ -773,7 +792,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1adcf1248dd39f849ac44ab47ec52e0f, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 2415966753268474668, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
       propertyPath: m_MaskInteraction
       value: 1
@@ -849,7 +871,10 @@ PrefabInstance:
       value: Hotspot
       objectReference: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 2415966753268474668, guid: 62753fa550d8e6449a4d5914d1297732, type: 3}
       propertyPath: m_MaskInteraction
       value: 1

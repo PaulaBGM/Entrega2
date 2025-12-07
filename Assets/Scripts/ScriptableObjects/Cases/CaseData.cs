@@ -18,8 +18,12 @@ public class CaseData : ScriptableObject
     public Hotspot[] hotspots;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public DocumentData[] documents;
 
+=======
+    [Header("Consecuencias")]
+>>>>>>> Stashed changes
 =======
     [Header("Consecuencias")]
 >>>>>>> Stashed changes

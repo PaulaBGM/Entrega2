@@ -6,7 +6,11 @@ using System.Collections.Generic;
 public class DocumentUIController : MonoBehaviour
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public static DocumentUIController Instance;
+=======
+    public static LetterUIController Instance { get; private set; }
+>>>>>>> Stashed changes
 =======
     public static LetterUIController Instance { get; private set; }
 >>>>>>> Stashed changes
@@ -52,6 +56,7 @@ public class DocumentUIController : MonoBehaviour
         _onCloseCallback = onClosed;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (caseData.documents != null)
         {
             foreach (var doc in caseData.documents)
@@ -61,6 +66,10 @@ public class DocumentUIController : MonoBehaviour
                 view.Initialize(doc);
             }
         }
+=======
+        titleText.text = formattedTitle;
+        GeneratePages(formattedDescription);
+>>>>>>> Stashed changes
 =======
         titleText.text = formattedTitle;
         GeneratePages(formattedDescription);

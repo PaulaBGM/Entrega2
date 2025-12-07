@@ -63,6 +63,7 @@ public class CaseManager : MonoBehaviour
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public void StartCase()
     {
         var caseData = GetCurrentCase();
@@ -75,6 +76,9 @@ public class CaseManager : MonoBehaviour
     }
 
     private void OnArtworkEvaluated(ArtWork artwork, bool hasPassed)
+=======
+    private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
+>>>>>>> Stashed changes
 =======
     private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
 >>>>>>> Stashed changes
