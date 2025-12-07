@@ -1,6 +1,5 @@
 using Managers;
 using UnityEngine;
-using ArtWorks;
 
 public class CaseManager : MonoBehaviour
 {
@@ -63,6 +62,7 @@ public class CaseManager : MonoBehaviour
         return caseResults[index];
     }
 
+<<<<<<< Updated upstream
     public void StartCase()
     {
         var caseData = GetCurrentCase();
@@ -75,6 +75,9 @@ public class CaseManager : MonoBehaviour
     }
 
     private void OnArtworkEvaluated(ArtWork artwork, bool hasPassed)
+=======
+    private void OnArtworkEvaluated(ArtWorks.ArtWork artwork, bool hasPassed)
+>>>>>>> Stashed changes
     {
         var caseData = GetCurrentCase();
         bool isCorrect = caseData.isGenuine == hasPassed;
@@ -95,6 +98,5 @@ public class CaseManager : MonoBehaviour
             return;
 
         currentCaseIndex++;
-        StartCase();
     }
 }
