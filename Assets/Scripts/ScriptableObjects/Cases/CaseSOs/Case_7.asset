@@ -18,5 +18,6 @@ MonoBehaviour:
   artWorkPrefab: {fileID: 2719531461719534455, guid: f41891add14358c4bb9c80485f927989, type: 3}
   isGenuine: 1
   hotspots: []
+  documentsData: {fileID: 11400000, guid: 15e5b61d54cb18c42909f6d70701acf7, type: 2}
   acceptConsequences: {fileID: 0}
   rejectConsequences: {fileID: 0}

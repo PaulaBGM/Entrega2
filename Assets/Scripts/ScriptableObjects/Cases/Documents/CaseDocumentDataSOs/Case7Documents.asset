@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Case7Documents
   m_EditorClassIdentifier: 
   documents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 030dbbe4cd9f7254ca82393d696e5065, type: 2}
+  - {fileID: 11400000, guid: bbcca3d16cb53a34e876cd8516231420, type: 2}
+  - {fileID: 11400000, guid: 039ddc40f3394204e8ac2de673ee5c48, type: 2}
+  - {fileID: 11400000, guid: 52e9faaa04e302b40b48a51894d759d2, type: 2}
+  - {fileID: 11400000, guid: 402fea16f9bad7f43bacb7f47a2df1cf, type: 2}
