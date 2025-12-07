@@ -66,7 +66,7 @@ public class CaseManager : MonoBehaviour
     public void StartCase()
     {
         var caseData = GetCurrentCase();
-        DocumentUIController.Instance.ShowDocuments(caseData, OnDocumentsClosed);
+        //DocumentUIController.Instance.ShowDocuments(caseData, OnDocumentsClosed);
     }
 
     private void OnDocumentsClosed()

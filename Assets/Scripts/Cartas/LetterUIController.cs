@@ -1,9 +1,9 @@
 using UnityEngine;
 using System;
 
-public class DocumentUIController : MonoBehaviour
+public class LetterUIController : MonoBehaviour
 {
-    public static DocumentUIController Instance;
+    public static LetterUIController Instance;
 
     [SerializeField] private GameObject documentsPanel;
     [SerializeField] private Transform documentsContainer;
@@ -21,15 +21,15 @@ public class DocumentUIController : MonoBehaviour
         onCloseCallback = onClosed;
         ClearAllDocuments();
 
-        if (caseData.documents != null)
-        {
+       // if (caseData.documents != null)
+        /**{
             foreach (var doc in caseData.documents)
             {
                 var inst = Instantiate(documentViewPrefab, documentsContainer);
                 var view = inst.GetComponent<DocumentView>();
                 view.Initialize(doc);
             }
-        }
+        }**/
 
         documentsPanel.SetActive(true);
     }

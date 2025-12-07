@@ -1,6 +1,5 @@
 using ArtWorks;
 using Items;
-using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Interfaces;
@@ -119,21 +118,16 @@ public class CaseLetter : ItemBase, IInteractable
         State = LetterState.Open;
         UpdateSprite();
 
-        DocumentUIController.Instance.ShowDocuments(
-            caseData,
-            () =>
-            {
-                ArtworkSpawner.Instance.SpawnArtworkForCurrentCase(caseData);
-            }
-        );
+        if (caseData.documentsData != null)
+            DocumentSpawner.Instance.SpawnDocuments(caseData.documentsData);
+
+        ArtworkSpawner.Instance.SpawnArtworkForCurrentCase(caseData);
     }
 
     private void ReopenLetter()
     {
-        DocumentUIController.Instance.ShowDocuments(
-            caseData,
-            null
-        );
+        if (caseData.documentsData != null)
+            DocumentSpawner.Instance.SpawnDocuments(caseData.documentsData);
     }
 
     public void SealLetter()

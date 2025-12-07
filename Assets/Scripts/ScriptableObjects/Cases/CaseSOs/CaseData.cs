@@ -12,7 +12,7 @@ public class CaseData : ScriptableObject
     public bool isGenuine = true;
     public Hotspot[] hotspots;
 
-    public DocumentData[] documents;
+    public CaseDocumentsData documentsData;
 
     public GameAttributesDataSo acceptConsequences;
     public GameAttributesDataSo rejectConsequences;

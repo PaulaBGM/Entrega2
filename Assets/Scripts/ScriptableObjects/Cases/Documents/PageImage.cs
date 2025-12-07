@@ -4,8 +4,8 @@ using UnityEngine;
 public class PageImage
 {
     public Sprite sprite;
-    public Vector2 anchoredPosition;
+    public Vector2 position;
     public Vector2 size;
     public bool preserveAspect = true;
-    public int siblingIndex = 0;
+    public int order = 0;
 }

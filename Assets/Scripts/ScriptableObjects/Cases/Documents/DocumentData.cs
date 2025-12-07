@@ -4,5 +4,6 @@ using UnityEngine;
 public class DocumentData : ScriptableObject
 {
     public string documentTitle;
+    public Sprite backgroundSprite;
     public DocumentPageData[] pages;
 }
